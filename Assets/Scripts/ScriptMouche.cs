@@ -8,13 +8,14 @@ public class ScriptMouche : MonoBehaviour
     public GameObject LeServeur;
     public Rigidbody2D rb;
     private SpriteRenderer SpriteMouche;
-    public Animator AnimationDeplacement;
+    private Animator animationdeplacementmouche;
     // La position X requise avant que la mouche commence à te suivre
     public float XRequisMouche;
 
     void Start()
     {
         SpriteMouche = GetComponent<SpriteRenderer>();
+        animationdeplacementmouche = LaMouche.GetComponent<Animator>();
     }
 
     void Update()
@@ -32,8 +33,8 @@ public class ScriptMouche : MonoBehaviour
 
         // Si la position du personnage en x est superieur à la valeur requise
         if (LeServeur.transform.position.x > XRequisMouche) {
+            animationdeplacementmouche.enabled = false;
             rb.velocity = ((LeServeur.transform.position - transform.position) * 2);
-            AnimationDeplacement.enabled = false;
             // La mouche commence a te suivre
         }
 
