@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 6848689180314507578}
   - component: {fileID: 6131650144686553631}
   - component: {fileID: 467250134937336414}
+  - component: {fileID: 8157399902536825146}
   m_Layer: 0
   m_Name: Client
-  m_TagString: Untagged
+  m_TagString: Client
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4141776765292904729}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7454414, y: -9.604137, z: -424.53412}
+  m_LocalPosition: {x: 1.7454414, y: -9.604137, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -118,10 +119,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1811d1dcc0233448a9666ba678a16ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodWanted: 0
+  clientsAnimators:
+  - {fileID: 9100000, guid: 5746b985886198f4d95c8f9b5f438ecd, type: 2}
+  - {fileID: 22100000, guid: 43c3c6089029abf4a8e0d88ff90c9756, type: 2}
+  - {fileID: 22100000, guid: 7f254b375fd159f458bdd92ea8f22d46, type: 2}
   foodReceived: 0
-  clientMoveSpeed: 100
+  arrivedAtTable: 0
+  clientMoveSpeed: 2
   tables: []
   tableWantedIndex: 0
+  chosenClientIndex: 0
 --- !u!58 &467250134937336414
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -138,3 +146,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.1
+--- !u!95 &8157399902536825146
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4141776765292904729}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 7f254b375fd159f458bdd92ea8f22d46, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
