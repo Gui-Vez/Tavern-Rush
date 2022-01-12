@@ -23,6 +23,8 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
 
     private Animator animator;
 
+    public GameObject RefSons;
+
     void Start()
     {
         animator = this.GetComponent<Animator>();
@@ -232,8 +234,14 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
         porteBouffe = true;
 
         // Sélectionner la bouffe
+<<<<<<< Updated upstream
         BouffeActuelle = closestObject;
         BouffeActuelle.GetComponent<BoxCollider2D>().enabled = false;
+=======
+        BouffeActuelle = Bouffe;
+
+        RefSons.GetComponent<GestionSonoreAmbiance>().JouerSons("Ramassage");
+>>>>>>> Stashed changes
     }
 
     void ServirBouffe()
@@ -251,6 +259,8 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
             // Positionner la bouffe sur la table
             BouffeActuelle.transform.position = closestObject.transform.position;
 
+
+            RefSons.GetComponent<GestionSonoreAmbiance>().JouerSons("Livraison");
 
             // Réinitialiser la bouffe actuelle
             BouffeActuelle = GameObject.Find(" ");

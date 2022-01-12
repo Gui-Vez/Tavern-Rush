@@ -8,6 +8,8 @@ public class GenerateurPasse : MonoBehaviour
 {
     public GameObject[] plats;
 
+    public GameObject RefSons;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class GenerateurPasse : MonoBehaviour
             int platHasard = Random.Range(0, plats.Length);
             GameObject insanceAutrePlat = Instantiate(plats[platHasard], plats[platHasard].transform.position, plats[platHasard].transform.rotation);
             insanceAutrePlat.SetActive(true);
+            RefSons.GetComponent<GestionSonoreAmbiance>().JouerSons("Cloche");
             StopCoroutine(Commande());
             
             //GetComponent<Animator>().SetBool("qqch", true);

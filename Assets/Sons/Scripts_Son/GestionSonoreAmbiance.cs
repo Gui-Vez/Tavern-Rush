@@ -5,10 +5,14 @@ using UnityEngine;
 public class GestionSonoreAmbiance : MonoBehaviour
 {
     private AudioSource Audio;
+    public AudioSource AudioFoule;
 
     public AudioClip client;
+    public AudioClip cloche;
+    public AudioClip flaque;
+    public AudioClip livraison;
+    public AudioClip ramassage;
 
-    //bool peutJouerSFX = true;
 
     void Start()
     {
@@ -19,14 +23,12 @@ public class GestionSonoreAmbiance : MonoBehaviour
 
     void Update()
     {
-        //GetComponent<AudioSource>().volume = 
-        
-        /*
-        if (Input.GetKey(KeyCode.X))
+        // Si le volume est inférieur à 0.25,
+        if (AudioFoule.volume < 0.25f)
         {
-            StartCoroutine(AttendreSFX("Client"));
+            // Augmenter progressivement le volume
+            AudioFoule.volume += 0.00075f;
         }
-        */
     }
 
     public void JouerSons(string SFX)
@@ -34,25 +36,14 @@ public class GestionSonoreAmbiance : MonoBehaviour
         // Selon l'effet sonore,
         switch (SFX)
         {
-            case "Client": Audio.PlayOneShot(client, 1.00f); break;
+            // Jouer cet effet sonore
+            case "Client"   : Audio.PlayOneShot(client, 0.25f);    break;
+            case "Cloche"   : Audio.PlayOneShot(cloche, 0.15f);    break;
+
+            case "Livraison": Audio.PlayOneShot(livraison, 0.50f); break;
+            case "Ramassage": Audio.PlayOneShot(ramassage, 0.75f); break;
+
+            case "Flaque"   : Audio.PlayOneShot(flaque, 1.00f);    break;
         }
     }
-
-    /*
-    public IEnumerator AttendreSFX(string SFX)
-    {
-        if (peutJouerSFX)
-        {
-            peutJouerSFX = false;
-
-            JouerSons(SFX);
-
-            yield return new WaitForSeconds(2);
-
-            peutJouerSFX = true;
-        }
-
-        yield return null;
-    }
-    */
 }
