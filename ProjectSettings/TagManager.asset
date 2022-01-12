@@ -8,6 +8,7 @@ TagManager:
   - SpawnClient
   - Mouche
   - Commande
+  - Flaque
   layers:
   - Default
   - TransparentFX
