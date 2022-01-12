@@ -1,9 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 guid: 8080a56a8fa487047951292abe324f2d
 =======
 guid: c0534d192d0976a4c88fa4c0d19f4579
 >>>>>>> Stashed changes
+=======
+guid: 710eb095fd29c1545854157e8edf2c4e
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
 TextScriptImporter:
   externalObjects: {}
   userData: 

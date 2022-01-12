@@ -123,6 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 --- !u!1 &91627679
 GameObject:
@@ -206,6 +207,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
 --- !u!1 &519420028
 =======
 --- !u!1 &466400846
@@ -451,11 +454,15 @@ Camera:
   field of view: 60
 <<<<<<< Updated upstream
   orthographic: 1
+<<<<<<< HEAD
   orthographic size: 9.616586
 =======
   orthographic: 0
   orthographic size: 5
 >>>>>>> Stashed changes
+=======
+  orthographic size: 5
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -485,6 +492,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 --- !u!1 &709607538
 GameObject:
@@ -650,6 +658,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
 --- !u!1 &1038562668
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,7 +671,7 @@ GameObject:
   - component: {fileID: 1038562670}
   - component: {fileID: 1038562669}
   m_Layer: 0
-  m_Name: Background
+  m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -708,14 +718,14 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.38679248, g: 0.36166206, b: 0.32658422, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1038562670
@@ -726,12 +736,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038562668}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0394, y: 0.0506, z: 0}
-  m_LocalScale: {x: 34.15755, y: 19.277584, z: 0.9998}
+  m_LocalPosition: {x: 2.2493, y: 0.2597, z: 0}
+  m_LocalScale: {x: 4.2888, y: 0.7852, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &1630972338
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,3 +991,5 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
