@@ -27,8 +27,8 @@ public class ClientSpawner : MonoBehaviour
 
     IEnumerator SpawnClient()
     {
-        //Quand il y a 4 clients ou plus de spawn, arrêter de spawn, MAIS recommencer dès qu'un client ou plus
-        //est détruit
+        //Quand il y a 4 clients ou plus de spawn, arrÃªter de spawn, MAIS recommencer dÃ¨s qu'un client ou plus
+        //est dÃ©truit
         if (totalWaitingClients < 4)
         {
             Instantiate(clientPrefab, transform.position, Quaternion.identity);
