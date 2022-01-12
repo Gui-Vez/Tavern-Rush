@@ -10,7 +10,7 @@ Dépôt Git du GameJam 2022!
 -Système des commandes : bouffe breuvage apparaissent sur le comptoir
 -Clients : client demande breuvage/nourriture, client part ou arrive du resto
 
-Art
+<h3>Art</h3>
 -Dessiner resto/bar
 -Dessiner tables
 -Dessiner joueurs, dessiner clients
