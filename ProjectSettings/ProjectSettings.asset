@@ -4,7 +4,19 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 22
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< Updated upstream
   productGUID: 9a2edc79dde99344b9efb8016e3c77ee
+=======
+  productGUID: be176a67f1af6474284e545485cb91aa
+>>>>>>> Stashed changes
+=======
+  productGUID: 7bb238d3245f8fd4384c0bc5f15ff72c
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
+=======
+  productGUID: 7bb238d3245f8fd4384c0bc5f15ff72c
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +25,19 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< Updated upstream
   productName: Tavern Rush
+=======
+  productName: GameJam
+>>>>>>> Stashed changes
+=======
+  productName: GameJam
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
+=======
+  productName: GameJam
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -148,15 +172,39 @@ PlayerSettings:
   useHDRDisplay: 0
   D3DHDRBitDepth: 0
   m_ColorGamuts: 00000000
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< Updated upstream
   targetPixelDensity: 30
+=======
+  targetPixelDensity: 0
+>>>>>>> Stashed changes
+=======
+  targetPixelDensity: 0
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
+=======
+  targetPixelDensity: 0
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
   resolutionScalingMode: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier: {}
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< Updated upstream
   buildNumber:
     Standalone: 0
     iPhone: 0
     tvOS: 0
+=======
+  buildNumber: {}
+>>>>>>> Stashed changes
+=======
+  buildNumber: {}
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
+=======
+  buildNumber: {}
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
   overrideDefaultApplicationIdentifier: 0
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 19
@@ -174,10 +222,31 @@ PlayerSettings:
   StripUnusedMeshComponents: 0
   VertexChannelCompressionMask: 4054
   iPhoneSdkVersion: 988
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< Updated upstream
   iOSTargetOSVersionString: 11.0
   tvOSSdkVersion: 0
   tvOSRequireExtendedGameController: 0
   tvOSTargetOSVersionString: 11.0
+=======
+  iOSTargetOSVersionString: 
+  tvOSSdkVersion: 0
+  tvOSRequireExtendedGameController: 0
+  tvOSTargetOSVersionString: 
+>>>>>>> Stashed changes
+=======
+  iOSTargetOSVersionString: 
+  tvOSSdkVersion: 0
+  tvOSRequireExtendedGameController: 0
+  tvOSTargetOSVersionString: 
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
+=======
+  iOSTargetOSVersionString: 
+  tvOSSdkVersion: 0
+  tvOSRequireExtendedGameController: 0
+  tvOSTargetOSVersionString: 
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
   uIPrerenderedIcon: 0
   uIRequiresPersistentWiFi: 0
   uIRequiresFullScreen: 1
@@ -547,14 +616,38 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< Updated upstream
   metroPackageName: Tavern Rush
+=======
+  metroPackageName: GameJam
+>>>>>>> Stashed changes
+=======
+  metroPackageName: GameJam
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
+=======
+  metroPackageName: GameJam
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< Updated upstream
   metroApplicationDescription: Tavern Rush
+=======
+  metroApplicationDescription: GameJam
+>>>>>>> Stashed changes
+=======
+  metroApplicationDescription: GameJam
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
+=======
+  metroApplicationDescription: GameJam
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -601,6 +694,9 @@ PlayerSettings:
   XboxOneOverrideIdentityName: 
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< Updated upstream
   cloudServicesEnabled:
     Analytics: 0
     Build: 0
@@ -609,6 +705,15 @@ PlayerSettings:
     Purchasing: 0
     UDP: 0
     Unity Ads: 0
+=======
+  cloudServicesEnabled: {}
+>>>>>>> Stashed changes
+=======
+  cloudServicesEnabled: {}
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
+=======
+  cloudServicesEnabled: {}
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -622,11 +727,35 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< Updated upstream
   cloudProjectId: f5f222f7-1e06-486e-ba20-2b85b62d8c8d
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Tavern Rush
   organizationId: thegabdev
+=======
+  cloudProjectId: 
+  framebufferDepthMemorylessMode: 0
+  qualitySettingsNames: []
+  projectName: 
+  organizationId: 
+>>>>>>> Stashed changes
+=======
+  cloudProjectId: 
+  framebufferDepthMemorylessMode: 0
+  qualitySettingsNames: []
+  projectName: 
+  organizationId: 
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
+=======
+  cloudProjectId: 
+  framebufferDepthMemorylessMode: 0
+  qualitySettingsNames: []
+  projectName: 
+  organizationId: 
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   virtualTexturingSupportEnabled: 0
