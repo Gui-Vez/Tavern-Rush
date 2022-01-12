@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Table
   - SpawnClient
+  - Mouche
   layers:
   - Default
   - TransparentFX
