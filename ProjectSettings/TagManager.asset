@@ -9,6 +9,7 @@ TagManager:
   - Mouche
   - Commande
   - Flaque
+  - Client
   layers:
   - Default
   - TransparentFX
