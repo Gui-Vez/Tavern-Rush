@@ -19,7 +19,7 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
     public GameObject[] ListeSpawnPourCommandes;
     public GameObject[] ListeBouffe;
 
-    GameObject closestObject;
+    public GameObject closestObject;
 
     private Animator animator;
 
@@ -233,6 +233,7 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
 
         // Sélectionner la bouffe
         BouffeActuelle = closestObject;
+        BouffeActuelle.GetComponent<BoxCollider2D>().enabled = false;
     }
 
     void ServirBouffe()
@@ -243,7 +244,7 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
             // Ne plus faire porter la bouffe
             porteBouffe = false;
 
-
+            
             // Mettre la bouffe en tant qu'enfant de la table
             BouffeActuelle.transform.parent = closestObject.transform;
 
