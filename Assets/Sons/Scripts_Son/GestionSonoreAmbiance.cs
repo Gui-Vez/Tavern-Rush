@@ -13,6 +13,6 @@ public class GestionSonoreAmbiance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<AudioSource>().volume = 
+        //GetComponent<AudioSource>().volume = 
     }
 }
