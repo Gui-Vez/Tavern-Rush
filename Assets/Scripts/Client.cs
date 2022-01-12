@@ -5,36 +5,44 @@ using UnityEngine;
 public class Client : MonoBehaviour
 {
     Rigidbody2D rb;
-    Food foodWanted;
+    public Food foodWanted;
     GameObject spawnPoint;
     Vector2 currentVelocity;
+    Animator animator;
+    public RuntimeAnimatorController[] clientsAnimators;
 
     public enum Food
     {
         Pizza,
         Martini,
-        Sushi
+        Frites
     }
 
-    public bool foodReceived = false;
+    [SerializeField] bool foodReceived = false;
+    [SerializeField] bool arrivedAtTable = false;
 
     public float clientMoveSpeed;
     
     public GameObject[] tables;
 
     public int tableWantedIndex;
+    [SerializeField] int chosenClientIndex;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
         tables = GameObject.FindGameObjectsWithTag("Table");
         spawnPoint = GameObject.FindGameObjectWithTag("SpawnClient");
 
-        //Choose a random table and a random food
+        //Choose a random table, random food and random client
         tableWantedIndex = Random.Range(0, tables.Length);
-        foodWanted = (Food)Random.Range(0, 2);
+        foodWanted = (Food)Random.Range(0, 3);
+        chosenClientIndex = Random.Range(0, clientsAnimators.Length);
+
+        animator.runtimeAnimatorController = clientsAnimators[chosenClientIndex];
 
         //Layer 6 = Table Libre
         //Layer 7 = Table Occupée
@@ -44,35 +52,43 @@ public class Client : MonoBehaviour
             tableWantedIndex = Random.Range(0, tables.Length);
         }
         
-
         tables[tableWantedIndex].layer = 7;
 
     }
-
+    
     // Update is called once per frame
     void Update()
     {
         //Le client se dirige vers la table choisie
-        if (transform.position != tables[tableWantedIndex].transform.position && foodReceived == false)
+        if (arrivedAtTable == false)
         {
-            currentVelocity = Vector3.Normalize(tables[tableWantedIndex].transform.position - transform.position) * clientMoveSpeed;
+            currentVelocity = (tables[tableWantedIndex].transform.position - transform.position) * clientMoveSpeed;
+        }
+        else
+        {
+            currentVelocity = Vector2.zero;
+            animator.SetTrigger("ArrivedAtTable");
         }
 
         if (foodReceived)
         {
+            
             //Attendre un peu à la table, puis partir
             StartCoroutine(QuitRoutine());
 
         }
 
         rb.velocity = currentVelocity;
+        
     }
 
     IEnumerator QuitRoutine()
     {
         yield return new WaitForSeconds(1f);
 
-        currentVelocity = Vector3.Normalize(spawnPoint.transform.position - transform.position) * (clientMoveSpeed/2);
+        //Changer l'anim
+        animator.SetTrigger("QuittingTable");
+        currentVelocity = (spawnPoint.transform.position - transform.position) * clientMoveSpeed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -81,6 +97,13 @@ public class Client : MonoBehaviour
         {
             ClientSpawner.totalWaitingClients--;
             Destroy(gameObject);
+        }
+
+        if (collision.gameObject == tables[tableWantedIndex])
+        {
+            //Arrived at table
+            arrivedAtTable = true;
+            print("arrivedAtTable");
         }
     }
 
