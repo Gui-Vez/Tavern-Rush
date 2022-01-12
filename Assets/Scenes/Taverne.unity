@@ -216,6 +216,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Table
       objectReference: {fileID: 0}
+    - target: {fileID: 615630736172017897, guid: 4e08dc972a327b740892b162fef58e0f, type: 3}
+      propertyPath: m_Size.x
+      value: 0.29668474
+      objectReference: {fileID: 0}
+    - target: {fileID: 615630736172017897, guid: 4e08dc972a327b740892b162fef58e0f, type: 3}
+      propertyPath: m_Size.y
+      value: 0.13879493
+      objectReference: {fileID: 0}
+    - target: {fileID: 615630736172017897, guid: 4e08dc972a327b740892b162fef58e0f, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0024769008
+      objectReference: {fileID: 0}
+    - target: {fileID: 615630736172017897, guid: 4e08dc972a327b740892b162fef58e0f, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.023046104
+      objectReference: {fileID: 0}
     - target: {fileID: 615630736563011316, guid: 4e08dc972a327b740892b162fef58e0f, type: 3}
       propertyPath: m_Name
       value: Tables (1)
@@ -275,6 +291,22 @@ PrefabInstance:
     - target: {fileID: 615630737497149079, guid: 4e08dc972a327b740892b162fef58e0f, type: 3}
       propertyPath: m_TagString
       value: Table
+      objectReference: {fileID: 0}
+    - target: {fileID: 615630737497149098, guid: 4e08dc972a327b740892b162fef58e0f, type: 3}
+      propertyPath: m_Size.x
+      value: 0.2788309
+      objectReference: {fileID: 0}
+    - target: {fileID: 615630737497149098, guid: 4e08dc972a327b740892b162fef58e0f, type: 3}
+      propertyPath: m_Size.y
+      value: 0.119029984
+      objectReference: {fileID: 0}
+    - target: {fileID: 615630737497149098, guid: 4e08dc972a327b740892b162fef58e0f, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0024825037
+      objectReference: {fileID: 0}
+    - target: {fileID: 615630737497149098, guid: 4e08dc972a327b740892b162fef58e0f, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.015634276
       objectReference: {fileID: 0}
     - target: {fileID: 615630737597194405, guid: 4e08dc972a327b740892b162fef58e0f, type: 3}
       propertyPath: m_TagString
@@ -780,6 +812,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1496117834}
   - component: {fileID: 1496117835}
+  - component: {fileID: 1496117836}
   m_Layer: 0
   m_Name: Spawn Client
   m_TagString: SpawnClient
@@ -795,7 +828,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1496117833}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.610751, y: -10.94248, z: 82.73388}
+  m_LocalPosition: {x: -7.22, y: -10.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1671341258}
@@ -814,6 +847,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clientPrefab: {fileID: 4141776765292904729, guid: a99e63b8e8f4a9242b19682edfe2fcc1, type: 3}
+--- !u!58 &1496117836
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496117833}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1503648389
 GameObject:
   m_ObjectHideFlags: 0
