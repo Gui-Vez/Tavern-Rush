@@ -8,6 +8,10 @@ public class ControlerPersonnage : MonoBehaviour
     public float vitesseX;      //vitesse en gauche et droite
     public float vitesseY;      //vitesse en haut et bas
     public float Vitesse;
+
+
+    /* Détection des touches et modification de la vitesse de déplacement;
+       "a" et "d" pour aller a gauche et a droite, "w" et "s" pour en haut et en bas */
     
     private Animator animator;
  
@@ -36,21 +40,65 @@ public class ControlerPersonnage : MonoBehaviour
         if (VitesseX > 0)
         {
             directionMouvement.x = 1;
+            if (VitesseY < 0)
+            {
+                directionMouvement.x = 1;
+                directionMouvement.y = -1;
+            }
+
+            else if (VitesseY > 0)
+            {
+                directionMouvement.x = 1;
+                directionMouvement.y = 1;
+            }
             animator.SetInteger("Direction", 2);
         }
         else if (VitesseX < 0)
         {
             directionMouvement.x = -1;
+            if (VitesseY < 0)
+            {
+                directionMouvement.x = -1;
+                directionMouvement.y = -1;
+            }
+
+            else if (VitesseY > 0)
+            {
+                directionMouvement.x = -1;
+                directionMouvement.y = 1;
+            }
             animator.SetInteger("Direction", 0);
         }
         else if (VitesseY > 0)
         {
             directionMouvement.y = 1;
+            if (VitesseX < 0)
+            {
+                directionMouvement.x = -1;
+                directionMouvement.y = 1;
+            }
+
+            else if (VitesseX > 0)
+            {
+                directionMouvement.x = 1;
+                directionMouvement.y = 1;
+            }
             animator.SetInteger("Direction", 1);
         }
         else if (VitesseY < 0)
         {
             directionMouvement.y = -1;
+            if (VitesseX < 0)
+            {
+                directionMouvement.x = -1;
+                directionMouvement.y = -1;
+            }
+
+            else if (VitesseX > 0)
+            {
+                directionMouvement.x = 1;
+                directionMouvement.y = -1;
+            }
             animator.SetInteger("Direction", 3);
         }
         transform.Translate(directionMouvement * Vitesse * Time.deltaTime, Space.World);
@@ -66,7 +114,6 @@ public class ControlerPersonnage : MonoBehaviour
         if (collision.gameObject.tag == "Mouche")
         {
         // Insérer ici tout ce qui est nécessaire après le contact de la mouche
-            Debug.Log("hit");
         }
     }
    
