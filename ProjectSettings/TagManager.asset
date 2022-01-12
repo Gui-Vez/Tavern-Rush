@@ -10,6 +10,8 @@ TagManager:
   - Commande
   - Flaque
   - Client
+  - Bouffe
+  - Spawn
   layers:
   - Default
   - TransparentFX
