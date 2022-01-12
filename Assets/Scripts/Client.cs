@@ -18,8 +18,9 @@ public class Client : MonoBehaviour
         Frites
     }
 
-    [SerializeField] bool foodReceived = false;
+    public bool foodReceived = false;
     [SerializeField] bool arrivedAtTable = false;
+    bool quittingTable = false;
 
     public float clientMoveSpeed;
     
@@ -66,13 +67,18 @@ public class Client : MonoBehaviour
         }
         else
         {
-            currentVelocity = Vector2.zero;
-            animator.SetTrigger("ArrivedAtTable");
+            if (foodReceived == false)
+            {
+                currentVelocity = Vector2.zero;
+                animator.SetTrigger("ArrivedAtTable");
+            }
+            
         }
 
-        if (foodReceived)
+        if (foodReceived && quittingTable == false)
         {
-            
+            quittingTable = true;
+            print("callQuitRoutine");
             //Attendre un peu à la table, puis partir
             StartCoroutine(QuitRoutine());
 
@@ -89,14 +95,18 @@ public class Client : MonoBehaviour
         //Changer l'anim
         animator.SetTrigger("QuittingTable");
         currentVelocity = (spawnPoint.transform.position - transform.position) * clientMoveSpeed;
+        tables[tableWantedIndex].layer = 6;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "SpawnClient" && foodReceived)
         {
-            ClientSpawner.totalWaitingClients--;
+            
             Destroy(gameObject);
+            //spawnPoint.GetComponent<ClientSpawner>().canSpawnClient = true;
+            ClientSpawner.totalWaitingClients--;
+            
         }
 
         if (collision.gameObject == tables[tableWantedIndex])
