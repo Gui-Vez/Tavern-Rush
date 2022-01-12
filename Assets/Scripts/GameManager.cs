@@ -20,5 +20,6 @@ public class GameManager : MonoBehaviour
     public static void LoadScene(int buildIndex)
     {
         SceneManager.LoadScene(buildIndex);
+
     }
 }
