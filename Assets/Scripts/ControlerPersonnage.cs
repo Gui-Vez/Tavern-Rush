@@ -29,6 +29,13 @@ public class ControlerPersonnage : MonoBehaviour
         var VitesseX = Mathf.Round(Input.GetAxis("Horizontal")) * Vitesse;
 
         GetComponent<Rigidbody2D>().velocity = new Vector2(vitesseX, vitesseY);
+
+        if (VitesseX == 0)
+        {
+            directionMouvement.x = 0;
+            directionMouvement.y = 0;
+            //animator.SetInteger("Direction", -1);
+        }
         
         if (VitesseX > 0)
         {
