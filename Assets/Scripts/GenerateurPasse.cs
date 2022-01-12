@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public class GenerateurPasse : MonoBehaviour
@@ -22,7 +23,7 @@ public class GenerateurPasse : MonoBehaviour
             
             //Génération d'un ennemi au hasard
             int platHasard = Random.Range(0, plats.Length);
-            GameObject insanceAutrePlat = Instantiate(plats[platHasard], plats[platHasard].transform.position , plats[platHasard].transform.rotation);
+            GameObject insanceAutrePlat = Instantiate(plats[platHasard], plats[platHasard].transform.position, plats[platHasard].transform.rotation);
             insanceAutrePlat.SetActive(true);
             StopCoroutine(Commande());
             
