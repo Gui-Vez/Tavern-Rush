@@ -355,8 +355,9 @@ GameObject:
   - component: {fileID: 832569411}
   - component: {fileID: 832569410}
   - component: {fileID: 832569415}
+  - component: {fileID: 832569412}
   m_Layer: 0
-  m_Name: Capsule (1)
+  m_Name: LaMouche
   m_TagString: Mouche
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -375,8 +376,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.018160341, y: 0.0665698}
-  m_Size: {x: 1.7477663, y: 3.4168193}
+  m_Offset: {x: -0.00488557, y: 0.02568865}
+  m_Size: {x: 0.2876921, y: 0.38992473}
   m_Direction: 0
 --- !u!50 &832569411
 Rigidbody2D:
@@ -399,6 +400,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!95 &832569412
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832569409}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ded76b1f315a8aa42a66cab77a95fb36, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &832569413
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -439,12 +459,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
+  m_Sprite: {fileID: -1264879236344067857, guid: 1818aab1ca987574086217cb12c96f76, type: 3}
   m_Color: {r: 0.58431375, g: 0.5064423, b: 0.12941176, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.15, y: 0.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -457,13 +477,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832569409}
-  m_LocalRotation: {x: -0, y: -0, z: 0.6933474, w: -0.7206036}
-  m_LocalPosition: {x: 10.77, y: 1.22, z: -0.44581366}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0034770584, w: -0.999994}
+  m_LocalPosition: {x: 10.951, y: 0.79022, z: -0.44581}
+  m_LocalScale: {x: 7.9286175, y: 7.9286175, z: 7.9286175}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -87.791}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.398}
 --- !u!114 &832569415
 MonoBehaviour:
   m_ObjectHideFlags: 0
