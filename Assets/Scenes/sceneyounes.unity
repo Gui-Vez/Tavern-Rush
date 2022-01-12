@@ -478,6 +478,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LaMouche: {fileID: 832569409}
   LePerso: {fileID: 795684264}
+  rb: {fileID: 832569411}
+  XRequisMouche: 10
 --- !u!1 &960158446
 GameObject:
   m_ObjectHideFlags: 0

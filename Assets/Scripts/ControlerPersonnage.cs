@@ -26,8 +26,10 @@ public class ControlerPersonnage : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        // Si le personnage entre en contact avec la mouche
         if (collision.gameObject.tag == "Mouche")
         {
+        // Insérer ici tout ce qui est nécessaire après le contact de la mouche
             Debug.Log("hit");
         }
     }
