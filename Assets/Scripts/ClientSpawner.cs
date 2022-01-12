@@ -66,7 +66,6 @@ public class ClientSpawner : MonoBehaviour
                 StartCoroutine(SpawnClient());
                 canSpawnClient = false;
 
-                
             }
            
         }

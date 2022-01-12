@@ -5,10 +5,12 @@ using UnityEngine;
 public class Client : MonoBehaviour
 {
     Rigidbody2D rb;
-    public Food foodWanted;
     GameObject spawnPoint;
     Vector2 currentVelocity;
     Animator animator;
+    Animator bubbleAnimator;
+
+    public Food foodWanted;
     public RuntimeAnimatorController[] clientsAnimators;
 
     public enum Food
@@ -18,13 +20,17 @@ public class Client : MonoBehaviour
         Frites
     }
 
+    public Sprite[] foodSprites;
+    GameObject foodWantedClone;
+    public GameObject foodWantedPrefab;
+
     public bool foodReceived = false;
     [SerializeField] bool arrivedAtTable = false;
     bool quittingTable = false;
 
     public float clientMoveSpeed;
     
-    public GameObject[] tables;
+    GameObject[] tables;
 
     public int tableWantedIndex;
     [SerializeField] int chosenClientIndex;
@@ -34,6 +40,7 @@ public class Client : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        bubbleAnimator = transform.GetChild(0).GetComponent<Animator>();
 
         tables = GameObject.FindGameObjectsWithTag("Table");
         spawnPoint = GameObject.FindGameObjectWithTag("SpawnClient");
@@ -71,6 +78,17 @@ public class Client : MonoBehaviour
             {
                 currentVelocity = Vector2.zero;
                 animator.SetTrigger("ArrivedAtTable");
+                bubbleAnimator.SetTrigger("ArrivedAtTable");
+
+
+                /*if (tables[tableWantedIndex].transform.GetChild(0).gameObject != null)
+                {
+                    if (tables[tableWantedIndex].transform.GetChild(0).gameObject.name == foodWanted.ToString())
+                    {
+                        foodReceived = true;
+                    }
+                }*/
+                
             }
             
         }
@@ -90,6 +108,8 @@ public class Client : MonoBehaviour
 
     IEnumerator QuitRoutine()
     {
+        Destroy(foodWantedClone);
+        bubbleAnimator.SetTrigger("QuittingTable");
         yield return new WaitForSeconds(1f);
 
         //Changer l'anim
@@ -113,7 +133,13 @@ public class Client : MonoBehaviour
         {
             //Arrived at table
             arrivedAtTable = true;
-            print("arrivedAtTable");
+            
+            //Créer l'item bouffe dans la bulle, etc
+            foodWantedClone = Instantiate(foodWantedPrefab, Vector2.zero, Quaternion.identity, bubbleAnimator.gameObject.transform);
+            foodWantedClone.GetComponent<SpriteRenderer>().sprite = foodSprites[(int)foodWanted];
+            foodWantedClone.transform.localPosition = Vector2.zero;
+            foodWantedClone.transform.localScale = new Vector2(0.7f, 0.7f);
+            //print("arrivedAtTable");
         }
     }
 
