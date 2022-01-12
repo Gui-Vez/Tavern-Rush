@@ -6,6 +6,9 @@ public class ScriptMouche : MonoBehaviour
 {
     public GameObject LaMouche;
     public GameObject LePerso;
+    public Rigidbody2D rb;
+    // La position X requise avant que la mouche commence à te suivre
+    public float XRequisMouche;
 
     void Start()
     {
@@ -14,27 +17,17 @@ public class ScriptMouche : MonoBehaviour
 
     void Update()
     {
-        if (LePerso.transform.position.x > 10)
-        {
-            StartCoroutine(moveToX(LaMouche.transform, LePerso.transform.position, 0.5f));
+        // Si la position du personnage en x est superieur à la valeur requise
+        if (LePerso.transform.position.x > XRequisMouche) {
+            rb.velocity = ((LePerso.transform.position - transform.position) * 2);
+        // La mouche commence a te suivre
         }
 
-    }
-
-
-    IEnumerator moveToX(Transform fromPosition, Vector3 toPosition, float duration)
-    {
-
-        float counter = 0;
-
-        //Get the current position of the object to be moved
-        Vector3 startPos = fromPosition.position;
-
-        while (counter < duration)
+        else
         {
-            counter += Time.deltaTime;
-            fromPosition.position = Vector3.Lerp(startPos, toPosition, counter / duration);
-            yield return null;
+        // La mouche arrête de te suivre
+            rb.velocity = ((LePerso.transform.position - transform.position) * 0);
         }
     }
+
 }
