@@ -6,6 +6,7 @@ public class ClientSpawner : MonoBehaviour
 {
     public GameObject clientPrefab;
     public static int totalWaitingClients = 0;
+    //Avoir l'array table qui est dans client ici aussi
 
     public void Awake()
     {
@@ -26,6 +27,8 @@ public class ClientSpawner : MonoBehaviour
 
     IEnumerator SpawnClient()
     {
+        //Quand il y a 4 clients ou plus de spawn, arrêter de spawn, MAIS recommencer dès qu'un client ou plus
+        //est détruit
         if (totalWaitingClients < 4)
         {
             Instantiate(clientPrefab, transform.position, Quaternion.identity);
@@ -35,7 +38,5 @@ public class ClientSpawner : MonoBehaviour
 
             StartCoroutine(SpawnClient());
         }
-
-       
     }
 }
