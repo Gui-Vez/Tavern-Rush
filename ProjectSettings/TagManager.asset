@@ -9,6 +9,8 @@ TagManager:
   - Mouche
   - Commande
   - Flaque
+  - Bouffe
+  - Spawn
   layers:
   - Default
   - TransparentFX
