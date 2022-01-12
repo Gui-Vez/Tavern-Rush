@@ -124,6 +124,7 @@ NavMeshSettings:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 --- !u!1 &91627679
 GameObject:
@@ -207,6 +208,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
 =======
 >>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
 --- !u!1 &519420028
@@ -455,11 +458,15 @@ Camera:
 <<<<<<< Updated upstream
   orthographic: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   orthographic size: 9.616586
 =======
   orthographic: 0
   orthographic size: 5
 >>>>>>> Stashed changes
+=======
+  orthographic size: 5
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
 =======
   orthographic size: 5
 >>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
@@ -492,6 +499,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< Updated upstream
 --- !u!1 &709607538
@@ -660,6 +668,8 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 =======
 >>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
+=======
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
 --- !u!1 &1038562668
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,6 +752,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!1 &1630972338
 GameObject:
@@ -991,5 +1002,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
 =======
 >>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)

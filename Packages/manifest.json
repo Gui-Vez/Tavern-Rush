@@ -5,11 +5,15 @@
     "com.unity.ads": "3.7.5",
     "com.unity.analytics": "3.6.12",
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     "com.unity.collab-proxy": "1.15.7",
 =======
     "com.unity.collab-proxy": "1.15.4",
 >>>>>>> Stashed changes
+=======
+    "com.unity.collab-proxy": "1.15.4",
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)
 =======
     "com.unity.collab-proxy": "1.15.4",
 >>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam)

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/ControlePersonnage.cs.meta
 guid: 8aeb991dc05dbe74bbf46683442cd526
+=======
+guid: 5414848d8ac31b646ab59fd0da977343
+>>>>>>> parent of 0babe1c (Merge branch 'main' of https://github.com/0gab/GameJam):Assets/Scripts/ItemSpawner.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
