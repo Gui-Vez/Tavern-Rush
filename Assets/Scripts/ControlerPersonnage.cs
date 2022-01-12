@@ -34,7 +34,7 @@ public class ControlerPersonnage : MonoBehaviour
         {
             directionMouvement.x = 0;
             directionMouvement.y = 0;
-            //animator.SetInteger("Direction", -1);
+            animator.SetInteger("Direction", -1);
         }
         
         if (VitesseX > 0)
@@ -51,7 +51,7 @@ public class ControlerPersonnage : MonoBehaviour
                 directionMouvement.x = 1;
                 directionMouvement.y = 1;
             }
-            //animator.SetInteger("Direction", 2);
+            animator.SetInteger("Direction", 2);
         }
         else if (VitesseX < 0)
         {
@@ -67,12 +67,11 @@ public class ControlerPersonnage : MonoBehaviour
                 directionMouvement.x = -1;
                 directionMouvement.y = 1;
             }
-            //animator.SetInteger("Direction", 0);
+            animator.SetInteger("Direction", 0);
         }
         else if (VitesseY > 0)
         {
             directionMouvement.y = 1;
-            //animator.SetInteger("Direction", 1);
             if (VitesseX < 0)
             {
                 directionMouvement.x = -1;
@@ -84,11 +83,11 @@ public class ControlerPersonnage : MonoBehaviour
                 directionMouvement.x = 1;
                 directionMouvement.y = 1;
             }
+            animator.SetInteger("Direction", 1);
         }
         else if (VitesseY < 0)
         {
             directionMouvement.y = -1;
-            //animator.SetInteger("Direction", 3);
             if (VitesseX < 0)
             {
                 directionMouvement.x = -1;
@@ -100,6 +99,7 @@ public class ControlerPersonnage : MonoBehaviour
                 directionMouvement.x = 1;
                 directionMouvement.y = -1;
             }
+            animator.SetInteger("Direction", 3);
         }
         transform.Translate(directionMouvement * Vitesse * Time.deltaTime, Space.World);
     }
