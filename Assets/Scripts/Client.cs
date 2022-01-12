@@ -81,13 +81,18 @@ public class Client : MonoBehaviour
                 bubbleAnimator.SetTrigger("ArrivedAtTable");
 
 
-                /*if (tables[tableWantedIndex].transform.GetChild(0).gameObject != null)
+                if (tables[tableWantedIndex].transform.childCount > 0)
                 {
                     if (tables[tableWantedIndex].transform.GetChild(0).gameObject.name == foodWanted.ToString())
                     {
+                        print("foodReceived !");
                         foodReceived = true;
                     }
-                }*/
+                    else
+                    {
+                        //Le client part, fâché !
+                    }
+                }
                 
             }
             
