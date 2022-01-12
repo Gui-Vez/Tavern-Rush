@@ -16,7 +16,7 @@ public class ScriptMouche : MonoBehaviour
     {
         if (LePerso.transform.position.x > 10)
         {
-            StartCoroutine(moveToX(LaMouche.transform, LePerso.transform.position, 1f));
+            StartCoroutine(moveToX(LaMouche.transform, LePerso.transform.position, 0.5f));
         }
 
     }
