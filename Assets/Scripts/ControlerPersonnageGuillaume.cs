@@ -234,14 +234,11 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
         porteBouffe = true;
 
         // Sélectionner la bouffe
-<<<<<<< Updated upstream
         BouffeActuelle = closestObject;
         BouffeActuelle.GetComponent<BoxCollider2D>().enabled = false;
-=======
-        BouffeActuelle = Bouffe;
+        //BouffeActuelle = Bouffe;
 
         RefSons.GetComponent<GestionSonoreAmbiance>().JouerSons("Ramassage");
->>>>>>> Stashed changes
     }
 
     void ServirBouffe()
