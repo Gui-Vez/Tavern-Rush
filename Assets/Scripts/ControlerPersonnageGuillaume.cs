@@ -16,9 +16,12 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
 
     public GameObject[] ListeSpawnPourCommandes;
     public GameObject[] ListeBouffe;
+    
+    private Animator animator;
 
     void Start()
     {
+        animator = this.GetComponent<Animator>();
         ListeSpawnPourCommandes = GameObject.FindGameObjectsWithTag("Spawn");
 
         ListeBouffe = GameObject.FindGameObjectsWithTag("Bouffe");
@@ -31,14 +34,84 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
 
     void Update()
     {
-        /* Détection des touches et modification de la vitesse de déplacement;
-       "A" et "D" pour bouger horizontalement
-       "W" et "S" pour bouger verticalement */
-        vitesseY = Mathf.Round(Input.GetAxis("Vertical")) * Vitesse;
-        vitesseX = Mathf.Round(Input.GetAxis("Horizontal")) * Vitesse;
+       Vector2 directionMouvement = Vector2.zero;
+        var VitesseY =  Mathf.Round(Input.GetAxis("Vertical")) * Vitesse;
+        var VitesseX = Mathf.Round(Input.GetAxis("Horizontal")) * Vitesse;
 
-        // Appliquer les vitesses à la vélocité du personnage
         GetComponent<Rigidbody2D>().velocity = new Vector2(vitesseX, vitesseY);
+
+        if (VitesseX == 0)
+        {
+            directionMouvement.x = 0;
+            directionMouvement.y = 0;
+            animator.SetInteger("Direction", -1);
+        }
+        
+        if (VitesseX > 0)
+        {
+            directionMouvement.x = 1;
+            if (VitesseY < 0)
+            {
+                directionMouvement.x = 1;
+                directionMouvement.y = -1;
+            }
+
+            else if (VitesseY > 0)
+            {
+                directionMouvement.x = 1;
+                directionMouvement.y = 1;
+            }
+            animator.SetInteger("Direction", 2);
+        }
+        else if (VitesseX < 0)
+        {
+            directionMouvement.x = -1;
+            if (VitesseY < 0)
+            {
+                directionMouvement.x = -1;
+                directionMouvement.y = -1;
+            }
+
+            else if (VitesseY > 0)
+            {
+                directionMouvement.x = -1;
+                directionMouvement.y = 1;
+            }
+            animator.SetInteger("Direction", 0);
+        }
+        else if (VitesseY > 0)
+        {
+            directionMouvement.y = 1;
+            if (VitesseX < 0)
+            {
+                directionMouvement.x = -1;
+                directionMouvement.y = 1;
+            }
+
+            else if (VitesseX > 0)
+            {
+                directionMouvement.x = 1;
+                directionMouvement.y = 1;
+            }
+            animator.SetInteger("Direction", 1);
+        }
+        else if (VitesseY < 0)
+        {
+            directionMouvement.y = -1;
+            if (VitesseX < 0)
+            {
+                directionMouvement.x = -1;
+                directionMouvement.y = -1;
+            }
+
+            else if (VitesseX > 0)
+            {
+                directionMouvement.x = 1;
+                directionMouvement.y = -1;
+            }
+            animator.SetInteger("Direction", 3);
+        }
+        transform.Translate(directionMouvement * Vitesse * Time.deltaTime, Space.World);
 
 
         // Si le joueur porte de la bouffe,
@@ -66,7 +139,7 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
         }
 
         // Si le personnage entre en contact avec de la bouffe,
-        if (collision.gameObject.tag == "Bouffe")
+        if (collision.gameObject.tag == "Commande")
         {
             // Appeler la fonction qui fait ramasser la bouffe
             RamasserBouffe(collision.gameObject);
