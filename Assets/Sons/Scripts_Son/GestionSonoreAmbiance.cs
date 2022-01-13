@@ -23,8 +23,8 @@ public class GestionSonoreAmbiance : MonoBehaviour
 
     void Update()
     {
-        // Si le volume est inférieur à 0.25,
-        if (AudioFoule.volume < 0.25f)
+        // Si le volume est infÃ©rieur Ã  0.13,
+        if (AudioFoule.volume < 0.13f)
         {
             // Augmenter progressivement le volume
             AudioFoule.volume += 0.00075f;

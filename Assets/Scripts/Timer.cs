@@ -8,8 +8,9 @@ public class Timer : MonoBehaviour
 {
     public float LeTimer;
     public Text TimerText;
-    public AudioSource audioSource;
-    public AudioClip Horloge;
+    public AudioSource Source;
+
+    public AudioClip horloge;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (LeTimer < 0)
         {
             LeTimer = 0;
@@ -31,7 +33,8 @@ public class Timer : MonoBehaviour
     }
 
     void DixSecondes()
-    {
-        audioSource.PlayOneShot(Horloge, 0.5f);
+    { 
+        Source.PlayOneShot(horloge, 0.9f);
+        print("Yeehaw");
     }
 }

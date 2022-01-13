@@ -24,7 +24,8 @@ public class Client : MonoBehaviour
     GameObject foodWantedClone;
     public GameObject foodWantedPrefab;
 
-    public bool foodReceived = false;
+    public bool correctFoodReceived = false;
+    bool wrongFood = false;
     [SerializeField] bool arrivedAtTable = false;
     bool quittingTable = false;
 
@@ -74,7 +75,7 @@ public class Client : MonoBehaviour
         }
         else
         {
-            if (foodReceived == false)
+            if (correctFoodReceived == false)
             {
                 currentVelocity = Vector2.zero;
                 animator.SetTrigger("ArrivedAtTable");
@@ -88,11 +89,12 @@ public class Client : MonoBehaviour
 
                     if (tables[tableWantedIndex].transform.GetChild(0).gameObject.GetComponent<ItemBouffe>().itemID == foodWanted.ToString())
                     {
-                        foodReceived = true;
+                        correctFoodReceived = true;
                     }
                     else
                     {
                         //Le client part, fâché !
+                        wrongFood = true;
                     }
                 }
                 
@@ -100,14 +102,17 @@ public class Client : MonoBehaviour
             
         }
 
-        if (foodReceived && quittingTable == false)
+        if (quittingTable == false && (correctFoodReceived || wrongFood))
         {
+            
             quittingTable = true;
-            print("callQuitRoutine");
+            
             //Attendre un peu à la table, puis partir
             StartCoroutine(QuitRoutine());
 
         }
+
+        
 
         rb.velocity = currentVelocity;
         
@@ -128,7 +133,7 @@ public class Client : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "SpawnClient" && foodReceived)
+        if (collision.gameObject.tag == "SpawnClient" && correctFoodReceived)
         {
             
             Destroy(gameObject);

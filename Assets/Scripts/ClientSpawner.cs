@@ -28,12 +28,12 @@ public class ClientSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(totalWaitingClients);
+        //print(totalWaitingClients);
 
         if (totalWaitingClients == 4 && canSpawnClient == false)
         {
             canSpawnClient = true;
-            print("stopped spawning");
+            //print("stopped spawning");
             StopAllCoroutines();
         }
 
@@ -44,7 +44,7 @@ public class ClientSpawner : MonoBehaviour
         //Quand il y a 4 clients ou plus de spawn, arr�ter de spawn, MAIS recommencer d�s qu'un client ou plus
         //est d�truit
 
-        print("Calling function");
+        //print("Calling function");
         Instantiate(clientPrefab, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
         totalWaitingClients++;
 
@@ -59,7 +59,7 @@ public class ClientSpawner : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Client" && collision.gameObject.GetComponent<Client>().foodReceived)
+        if (collision.gameObject.tag == "Client" && collision.gameObject.GetComponent<Client>().correctFoodReceived)
         {
             nbOfClientsServed++;
 

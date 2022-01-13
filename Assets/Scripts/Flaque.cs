@@ -17,7 +17,7 @@ public class Flaque : MonoBehaviour
 
     IEnumerator Commande()
     {
-        while (compteurFlaque < 2)
+        while (compteurFlaque < 4)
         {
             // Faire respirer la coroutine à chaque 10 secondes
             yield return new WaitForSeconds(2f);

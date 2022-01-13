@@ -117,6 +117,7 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
             }
             animator.SetInteger("Direction", 3);
         }
+
         transform.Translate(directionMouvement * Vitesse * Time.deltaTime, Space.World);
 
 
