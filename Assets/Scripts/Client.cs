@@ -24,7 +24,8 @@ public class Client : MonoBehaviour
     GameObject foodWantedClone;
     public GameObject foodWantedPrefab;
 
-    public bool foodReceived = false;
+    public bool FoodReceived = false;
+    bool orderSuccess = false;
     [SerializeField] bool arrivedAtTable = false;
     bool quittingTable = false;
 
@@ -74,8 +75,9 @@ public class Client : MonoBehaviour
         }
         else
         {
-            if (foodReceived == false)
+            if (FoodReceived == false)
             {
+             
                 currentVelocity = Vector2.zero;
                 animator.SetTrigger("ArrivedAtTable");
                 bubbleAnimator.SetTrigger("ArrivedAtTable");
@@ -86,13 +88,16 @@ public class Client : MonoBehaviour
                     print(tables[tableWantedIndex].transform.GetChild(0).gameObject.GetComponent<ItemBouffe>().itemID);
                     print(foodWanted.ToString());
 
+                    FoodReceived = true;
+
                     if (tables[tableWantedIndex].transform.GetChild(0).gameObject.GetComponent<ItemBouffe>().itemID == foodWanted.ToString())
                     {
-                        foodReceived = true;
+                        orderSuccess = true;
                     }
                     else
                     {
                         //Le client part, fâché !
+                        orderSuccess = false;
                     }
                 }
                 
@@ -100,14 +105,17 @@ public class Client : MonoBehaviour
             
         }
 
-        if (foodReceived && quittingTable == false)
+        if (quittingTable == false && FoodReceived)
         {
+            
             quittingTable = true;
-            print("callQuitRoutine");
+            
             //Attendre un peu à la table, puis partir
             StartCoroutine(QuitRoutine());
 
         }
+
+        
 
         rb.velocity = currentVelocity;
         
@@ -128,7 +136,7 @@ public class Client : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "SpawnClient" && foodReceived)
+        if (collision.gameObject.tag == "SpawnClient" && FoodReceived)
         {
             
             Destroy(gameObject);
