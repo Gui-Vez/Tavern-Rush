@@ -24,7 +24,7 @@ public class GestionSonoreAmbiance : MonoBehaviour
     void Update()
     {
         // Si le volume est inférieur à 0.13,
-        if (AudioFoule.volume < 0.13f)
+        if (AudioFoule.volume < 0.05f)
         {
             // Augmenter progressivement le volume
             AudioFoule.volume += 0.00075f;
@@ -37,13 +37,13 @@ public class GestionSonoreAmbiance : MonoBehaviour
         switch (SFX)
         {
             // Jouer cet effet sonore
-            case "Client"   : Audio.PlayOneShot(client, 0.25f);    break;
-            case "Cloche"   : Audio.PlayOneShot(cloche, 0.15f);    break;
+            case "Client"   : Audio.PlayOneShot(client, 0.05f);    break;
+            //case "Cloche"   : Audio.PlayOneShot(cloche, 0.15f);    break;
 
             case "Livraison": Audio.PlayOneShot(livraison, 0.50f); break;
             case "Ramassage": Audio.PlayOneShot(ramassage, 0.75f); break;
 
-            case "Flaque"   : Audio.PlayOneShot(flaque, 1.00f);    break;
+            //case "Flaque"   : Audio.PlayOneShot(flaque, 1.00f);    break;
         }
     }
 }

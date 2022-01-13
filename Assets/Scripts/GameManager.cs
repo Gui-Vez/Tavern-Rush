@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
 
                 if (scoreText == null)
                 {
+                    //Dude, c'est un fuckin' tag, oublie pas demain
                     scoreText = GameObject.FindGameObjectWithTag("Score").GetComponent<TMP_Text>();
                     winText = GameObject.Find("WinText").GetComponent<TMP_Text>();
                     loseText = GameObject.Find("LoseText").GetComponent<TMP_Text>();
