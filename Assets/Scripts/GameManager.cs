@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
     TMP_Text winText;
     TMP_Text loseText;
     AudioSource musicEnd;
+    Button MenuPrincipal;
 
     public AudioClip musicWin;
     public AudioClip musicLose;
@@ -54,6 +56,11 @@ public class GameManager : MonoBehaviour
         switch (currentScene.buildIndex)
         {
             case 0:
+                //Reset les variables stathicc
+                totalWaitingClients = 0;
+                nbOfClientsServed = 0;
+                nbOfOrdersDeliveredSuccessfully = 0;
+
                 break;
 
             case 1:
@@ -66,9 +73,12 @@ public class GameManager : MonoBehaviour
                     //Dude, c'est un fuckin' tag, oublie pas demain
                     scoreText = GameObject.FindGameObjectWithTag("Score").GetComponent<TMP_Text>();
                     musicEnd = GameObject.FindGameObjectWithTag("MusicEnd").GetComponent<AudioSource>();
+                    MenuPrincipal = GameObject.FindGameObjectWithTag("ButtonMenu").GetComponent<Button>();
                     winText = GameObject.Find("WinText").GetComponent<TMP_Text>();
                     loseText = GameObject.Find("LoseText").GetComponent<TMP_Text>();
                     serveurAnim = GameObject.Find("Serveur").GetComponent<Animator>();
+
+                    MenuPrincipal.onClick.AddListener(() => LoadScene(0));
 
                     scoreText.text += nbOfOrdersDeliveredSuccessfully.ToString();
                      

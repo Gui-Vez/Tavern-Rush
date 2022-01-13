@@ -167,7 +167,7 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
 
 
         // Si le joueur porte de la bouffe,
-        if (porteBouffe)
+        if (porteBouffe && BouffeActuelle != null)
         {
             // Affecter la position de la bouffe au personnage
             BouffeActuelle.transform.position = transform.position;
@@ -325,5 +325,10 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
     void EffetMouche()
     {
         Debug.Log("La mouche a touché le joueur");
+
+        if (BouffeActuelle != null)
+        {
+            Destroy(BouffeActuelle);
+        } 
     }
 }

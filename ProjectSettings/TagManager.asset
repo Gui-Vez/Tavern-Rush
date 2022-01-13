@@ -17,6 +17,7 @@ TagManager:
   - Martini
   - Score
   - MusicEnd
+  - ButtonMenu
   layers:
   - Default
   - TransparentFX

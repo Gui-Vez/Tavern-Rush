@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3978431372329407445}
   - component: {fileID: 7656496150878899798}
-  - component: {fileID: 6646740431519154312}
   m_Layer: 0
   m_Name: SlipperyWarning
   m_TagString: Untagged
@@ -26,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605794868877614419}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.71, z: 0}
+  m_LocalPosition: {x: 0.34, y: 3.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8746505150478523676}
@@ -51,7 +50,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -72,36 +71,17 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 12
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 23f5ac98df7c4804d81ceaf49cb93f95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.15, y: 1.1}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &6646740431519154312
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 605794868877614419}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 812109ca94f967b489177c6dd065a384, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5956184705342558320
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,7 +206,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 9
+  m_SortingOrder: 5
   m_Sprite: {fileID: 4432415923880465667, guid: 7c140c5410438cd44a72a0ea9cc054eb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -375,7 +355,7 @@ MonoBehaviour:
   - {x: -0.8776598, y: 0.0844636, z: 0}
   m_ShapePathHash: -1138298730
   m_Mesh: {fileID: 0}
-  m_InstanceId: 58414
+  m_InstanceId: 167254
 --- !u!114 &4104078680845563661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,7 +370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesseX: 0
   vitesseY: 0
-  Vitesse: 5
+  Vitesse: 8
   ControlesInversees: 0
   Exclamation: {fileID: 605794868877614419}
   BouffeActuelle: {fileID: 0}

@@ -19,6 +19,7 @@ public class Mouche : MonoBehaviour
 
     bool valeurModifieeEnCours;
 
+    public float speed;
 
     void Start()
     {
@@ -70,6 +71,6 @@ public class Mouche : MonoBehaviour
         }
 
         // Bouger la mouche en fonction de la direction demandée
-        transform.position = Vector3.MoveTowards(transform.position, Points[valeurAleatoire].position, 0.25f);
+        transform.position = Vector3.MoveTowards(transform.position, Points[valeurAleatoire].position, speed);
     }
 }
