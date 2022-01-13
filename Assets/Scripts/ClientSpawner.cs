@@ -12,6 +12,8 @@ public class ClientSpawner : MonoBehaviour
     public IEnumerator spawnCoroutine;
     //Avoir l'array table qui est dans client ici aussi
 
+    public GameObject RefSons;
+
     public void Awake()
     {
         StartCoroutine("SpawnClient");
@@ -51,8 +53,8 @@ public class ClientSpawner : MonoBehaviour
         yield return new WaitForSeconds(time);
 
         StartCoroutine(SpawnClient());
-          
-        
+
+        RefSons.GetComponent<GestionSonoreAmbiance>().JouerSons("Client");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -66,7 +68,6 @@ public class ClientSpawner : MonoBehaviour
                 StartCoroutine(SpawnClient());
                 canSpawnClient = false;
 
-                
             }
            
         }

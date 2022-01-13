@@ -12,6 +12,9 @@ TagManager:
   - Client
   - Bouffe
   - Spawn
+  - PIzza
+  - Frites
+  - Martini
   layers:
   - Default
   - TransparentFX

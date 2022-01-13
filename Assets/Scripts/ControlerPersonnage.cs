@@ -24,8 +24,11 @@ public class ControlerPersonnage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /* Détection des touches et modification de la vitesse de déplacement;
+       "a" et "d" pour avancer et reculer, "w" pour sauter */
+
         Vector2 directionMouvement = Vector2.zero;
-        var VitesseY =  Mathf.Round(Input.GetAxis("Vertical")) * Vitesse;
+        var VitesseY = Mathf.Round(Input.GetAxis("Vertical")) * Vitesse;
         var VitesseX = Mathf.Round(Input.GetAxis("Horizontal")) * Vitesse;
 
         GetComponent<Rigidbody2D>().velocity = new Vector2(vitesseX, vitesseY);
@@ -36,7 +39,7 @@ public class ControlerPersonnage : MonoBehaviour
             directionMouvement.y = 0;
             animator.SetInteger("Direction", -1);
         }
-        
+
         if (VitesseX > 0)
         {
             directionMouvement.x = 1;
@@ -103,10 +106,6 @@ public class ControlerPersonnage : MonoBehaviour
         }
         transform.Translate(directionMouvement * Vitesse * Time.deltaTime, Space.World);
     }
-
-    /* Détection des touches et modification de la vitesse de déplacement;
-       "a" et "d" pour avancer et reculer, "w" pour sauter
-    */
 
     void OnTriggerEnter2D(Collider2D collision)
     {
