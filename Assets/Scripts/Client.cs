@@ -83,9 +83,11 @@ public class Client : MonoBehaviour
 
                 if (tables[tableWantedIndex].transform.childCount > 0)
                 {
-                    if (tables[tableWantedIndex].transform.GetChild(0).gameObject.name == foodWanted.ToString())
+                    print(tables[tableWantedIndex].transform.GetChild(0).gameObject.GetComponent<ItemBouffe>().itemID);
+                    print(foodWanted.ToString());
+
+                    if (tables[tableWantedIndex].transform.GetChild(0).gameObject.GetComponent<ItemBouffe>().itemID == foodWanted.ToString())
                     {
-                        print("foodReceived !");
                         foodReceived = true;
                     }
                     else
@@ -114,6 +116,7 @@ public class Client : MonoBehaviour
     IEnumerator QuitRoutine()
     {
         Destroy(foodWantedClone);
+        Destroy(tables[tableWantedIndex].transform.GetChild(0).gameObject);
         bubbleAnimator.SetTrigger("QuittingTable");
         yield return new WaitForSeconds(1f);
 

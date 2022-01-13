@@ -11,13 +11,19 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
 
     bool glisse;                //si le joueur glisse
     bool porteBouffe;           //si le joueur porte de la bouffe
-    
+    bool joueurProcheTable = false;
+    bool joueurProcheBouffe = false;
+
     public GameObject BouffeActuelle; //la bouffe que le joueur porte
 
     public GameObject[] ListeSpawnPourCommandes;
     public GameObject[] ListeBouffe;
-    
+
+    public GameObject closestObject;
+
     private Animator animator;
+
+    public GameObject RefSons;
 
     void Start()
     {
@@ -120,6 +126,25 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
             // Affecter la position de la bouffe au personnage
             BouffeActuelle.transform.position = transform.position;
         }
+
+        //Si le joueur est proche de la table et qu'il appuie sur E, prendre OU déposer la bouffe
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (joueurProcheBouffe)
+            {
+                //Pickup bouffe
+                RamasserBouffe();
+            }
+
+            if (joueurProcheTable)
+            {
+                //Déposer table
+                ServirBouffe();
+
+            }
+        }
+
+        
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -142,18 +167,43 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
         if (collision.gameObject.tag == "Commande")
         {
             // Appeler la fonction qui fait ramasser la bouffe
-            RamasserBouffe(collision.gameObject);
+            joueurProcheBouffe = true;
+            closestObject = collision.gameObject;
+        }
+
+        // Si le personnage entre en contact avec une table
+        if (collision.gameObject.tag == "Table")
+        {
+            //proche de la table
+            joueurProcheTable = true;
+            closestObject = collision.gameObject;
+            
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        // Si le personnage entre en contact avec de la bouffe,
+        if (collision.gameObject.tag == "Commande")
+        {
+            // Appeler la fonction qui fait ramasser la bouffe
+            joueurProcheBouffe = false;
+            
+        }
+
+        // Si le personnage entre en contact avec une table
+        if (collision.gameObject.tag == "Table")
+        {
+            //proche de la table
+            joueurProcheTable = false;
+            
+
         }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Si le personnage entre en contact avec une table
-        if (collision.gameObject.tag == "Table")
-        {
-            // Appeler la fonction qui vérifie si la bouffe est celle demandée
-            VerifierBouffe(collision.gameObject);
-        }
+        
     }
 
     IEnumerator EffetFlaque()
@@ -178,30 +228,36 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
         }
     }
 
-    void RamasserBouffe(GameObject Bouffe)
+    void RamasserBouffe()
     {
         // Faire porter la bouffe
         porteBouffe = true;
 
         // Sélectionner la bouffe
-        BouffeActuelle = Bouffe;
+        BouffeActuelle = closestObject;
+        BouffeActuelle.GetComponent<BoxCollider2D>().enabled = false;
+        //BouffeActuelle = Bouffe;
+
+        RefSons.GetComponent<GestionSonoreAmbiance>().JouerSons("Ramassage");
     }
 
-    void VerifierBouffe(GameObject Table)
+    void ServirBouffe()
     {
         // S'il n'y a pas de bouffe dans les mains du joueur OU qu'il n'y a pas de bouffe sur la table,
-        if (BouffeActuelle != null && Table.transform.childCount == 0)
+        if (BouffeActuelle != null && closestObject.transform.childCount == 0)
         {
             // Ne plus faire porter la bouffe
             porteBouffe = false;
 
-
+            
             // Mettre la bouffe en tant qu'enfant de la table
-            BouffeActuelle.transform.parent = Table.transform;
+            BouffeActuelle.transform.parent = closestObject.transform;
 
             // Positionner la bouffe sur la table
-            BouffeActuelle.transform.position = Table.transform.position;
+            BouffeActuelle.transform.position = closestObject.transform.position;
 
+
+            RefSons.GetComponent<GestionSonoreAmbiance>().JouerSons("Livraison");
 
             // Réinitialiser la bouffe actuelle
             BouffeActuelle = GameObject.Find(" ");
