@@ -5,8 +5,7 @@ using UnityEngine;
 public class ClientSpawner : MonoBehaviour
 {
     public GameObject clientPrefab;
-    public static int totalWaitingClients = 0;
-    public static int nbOfClientsServed = 0;
+    
     public bool canSpawnClient = false;
 
     public IEnumerator spawnCoroutine;
@@ -30,7 +29,7 @@ public class ClientSpawner : MonoBehaviour
     {
         //print(totalWaitingClients);
 
-        if (totalWaitingClients == 4 && canSpawnClient == false)
+        if (GameManager.totalWaitingClients == 4 && canSpawnClient == false)
         {
             canSpawnClient = true;
             //print("stopped spawning");
@@ -46,7 +45,7 @@ public class ClientSpawner : MonoBehaviour
 
         //print("Calling function");
         Instantiate(clientPrefab, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
-        totalWaitingClients++;
+        GameManager.totalWaitingClients++;
 
         float time = Random.Range(1.5f, 2.5f);
 
@@ -61,9 +60,9 @@ public class ClientSpawner : MonoBehaviour
     {
         if (collision.gameObject.tag == "Client" && collision.gameObject.GetComponent<Client>().FoodReceived)
         {
-            nbOfClientsServed++;
+            GameManager.nbOfClientsServed++;
 
-            if (nbOfClientsServed % 2  == 0)
+            if (GameManager.nbOfClientsServed % 2  == 0)
             {
                 StartCoroutine(SpawnClient());
                 canSpawnClient = false;

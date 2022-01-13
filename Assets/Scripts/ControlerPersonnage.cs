@@ -8,7 +8,7 @@ public class ControlerPersonnage : MonoBehaviour
     public float vitesseX;      //vitesse en gauche et droite
     public float vitesseY;      //vitesse en haut et bas
     public float Vitesse;
-
+    public bool ControlesInversees = false;
 
     /* Détection des touches et modification de la vitesse de déplacement;
        "a" et "d" pour aller a gauche et a droite, "w" et "s" pour en haut et en bas */
@@ -54,7 +54,16 @@ public class ControlerPersonnage : MonoBehaviour
                 directionMouvement.x = 1;
                 directionMouvement.y = 1;
             }
-            animator.SetInteger("Direction", 2);
+
+            if (ControlesInversees == true)
+            {
+                animator.SetInteger("Direction", 0);
+            }
+
+            else
+            {
+                animator.SetInteger("Direction", 2);
+            }
         }
         else if (VitesseX < 0)
         {
@@ -70,7 +79,16 @@ public class ControlerPersonnage : MonoBehaviour
                 directionMouvement.x = -1;
                 directionMouvement.y = 1;
             }
-            animator.SetInteger("Direction", 0);
+
+            if (ControlesInversees == true)
+            {
+                animator.SetInteger("Direction", 2);
+            }
+
+            else
+            {
+                animator.SetInteger("Direction", 0);
+            }
         }
         else if (VitesseY > 0)
         {
@@ -86,7 +104,16 @@ public class ControlerPersonnage : MonoBehaviour
                 directionMouvement.x = 1;
                 directionMouvement.y = 1;
             }
-            animator.SetInteger("Direction", 1);
+
+            if (ControlesInversees == true)
+            {
+                animator.SetInteger("Direction", 3);
+            }
+
+            else
+            {
+                animator.SetInteger("Direction", 1);
+            }
         }
         else if (VitesseY < 0)
         {
@@ -102,9 +129,26 @@ public class ControlerPersonnage : MonoBehaviour
                 directionMouvement.x = 1;
                 directionMouvement.y = -1;
             }
-            animator.SetInteger("Direction", 3);
+           
+            if (ControlesInversees == true)
+            {
+                animator.SetInteger("Direction", 1);
+            }
+
+            else
+            {
+                animator.SetInteger("Direction", 3);
+            }
         }
-        transform.Translate(directionMouvement * Vitesse * Time.deltaTime, Space.World);
+        if (ControlesInversees == false)
+        {
+            transform.Translate(directionMouvement * Vitesse * Time.deltaTime, Space.World);
+        }
+
+        if (ControlesInversees == true)
+        {
+            transform.Translate(-directionMouvement * Vitesse * Time.deltaTime, Space.World);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -114,6 +158,24 @@ public class ControlerPersonnage : MonoBehaviour
         {
         // Insérer ici tout ce qui est nécessaire après le contact de la mouche
         }
+
+        if (collision.gameObject.tag == "Flaque")
+        {
+            ControlesInversees = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Flaque")
+        {
+            Invoke("RemettreLesCommandes", 5f);
+        }
+    }
+
+    void RemettreLesCommandes()
+    {
+        ControlesInversees = false;
     }
    
 }
