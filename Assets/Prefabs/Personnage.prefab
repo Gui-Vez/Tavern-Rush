@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8746505150478523666}
   - component: {fileID: 614257719759978361}
   - component: {fileID: -8978184286150984773}
+  - component: {fileID: 3793753089167369589}
   m_Layer: 0
   m_Name: Personnage
   m_TagString: Untagged
@@ -102,6 +103,7 @@ MonoBehaviour:
   vitesseX: 0
   vitesseY: 0
   Vitesse: 5
+  ControlesInversees: 0
 --- !u!50 &8746505150478523665
 Rigidbody2D:
   serializedVersion: 4
@@ -136,8 +138,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.59257126}
-  m_Size: {x: 1, y: 1}
+  m_Offset: {x: -0.024273276, y: 0.40029883}
+  m_Size: {x: 1.8738387, y: 2.9857402}
   m_Direction: 0
 --- !u!95 &614257719759978361
 Animator:
@@ -229,4 +231,15 @@ MonoBehaviour:
   - {x: -0.8776598, y: 0.0844636, z: 0}
   m_ShapePathHash: -1138298730
   m_Mesh: {fileID: 0}
-  m_InstanceId: 315732
+  m_InstanceId: 475008
+--- !u!210 &3793753089167369589
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8746505150478523678}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 106
