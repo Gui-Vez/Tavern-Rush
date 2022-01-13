@@ -194,13 +194,6 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        // Si le personnage entre en contact avec une mouche,
-        if (collision.gameObject.tag == "Mouche")
-        {
-            // Insérer ici tout ce qui est nécessaire après le contact de la mouche
-            Debug.Log("hit");
-        }
-
         // Si le personnage entre en contact avec une flaque,
         if (collision.gameObject.tag == "Flaque")
         {
@@ -245,11 +238,13 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
             joueurProcheTable = false;
         }
 
+        // Si le personnage entre en contact avec une flaque,
         if (collision.gameObject.tag == "Flaque")
         {
             Invoke("RemettreLesCommandes", 5f);
         }
 
+        // Si le personnage entre en contact avec une mouche,
         if (collision.gameObject.tag == "Mouche")
         {
             EffetMouche();
@@ -322,6 +317,6 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
 
     void EffetMouche()
     {
-        print("La mouche a frappé le joueur");
+        Debug.Log("La mouche a touché le joueur");
     }
 }
