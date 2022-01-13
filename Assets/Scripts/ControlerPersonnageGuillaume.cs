@@ -13,6 +13,7 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
     bool porteBouffe;           //si le joueur porte de la bouffe
     bool joueurProcheTable = false;
     bool joueurProcheBouffe = false;
+    public bool ControlesInversees = false;
 
     public GameObject BouffeActuelle; //la bouffe que le joueur porte
 
@@ -52,7 +53,7 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
             directionMouvement.y = 0;
             animator.SetInteger("Direction", -1);
         }
-        
+
         if (VitesseX > 0)
         {
             directionMouvement.x = 1;
@@ -67,7 +68,16 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
                 directionMouvement.x = 1;
                 directionMouvement.y = 1;
             }
-            animator.SetInteger("Direction", 2);
+
+            if (ControlesInversees == true)
+            {
+                animator.SetInteger("Direction", 0);
+            }
+
+            else
+            {
+                animator.SetInteger("Direction", 2);
+            }
         }
         else if (VitesseX < 0)
         {
@@ -83,7 +93,16 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
                 directionMouvement.x = -1;
                 directionMouvement.y = 1;
             }
-            animator.SetInteger("Direction", 0);
+
+            if (ControlesInversees == true)
+            {
+                animator.SetInteger("Direction", 2);
+            }
+
+            else
+            {
+                animator.SetInteger("Direction", 0);
+            }
         }
         else if (VitesseY > 0)
         {
@@ -99,7 +118,16 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
                 directionMouvement.x = 1;
                 directionMouvement.y = 1;
             }
-            animator.SetInteger("Direction", 1);
+
+            if (ControlesInversees == true)
+            {
+                animator.SetInteger("Direction", 3);
+            }
+
+            else
+            {
+                animator.SetInteger("Direction", 1);
+            }
         }
         else if (VitesseY < 0)
         {
@@ -115,10 +143,26 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
                 directionMouvement.x = 1;
                 directionMouvement.y = -1;
             }
-            animator.SetInteger("Direction", 3);
+
+            if (ControlesInversees == true)
+            {
+                animator.SetInteger("Direction", 1);
+            }
+
+            else
+            {
+                animator.SetInteger("Direction", 3);
+            }
+        }
+        if (ControlesInversees == false)
+        {
+            transform.Translate(directionMouvement * Vitesse * Time.deltaTime, Space.World);
         }
 
-        transform.Translate(directionMouvement * Vitesse * Time.deltaTime, Space.World);
+        if (ControlesInversees == true)
+        {
+            transform.Translate(-directionMouvement * Vitesse * Time.deltaTime, Space.World);
+        }
 
 
         // Si le joueur porte de la bouffe,
@@ -160,8 +204,10 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
         // Si le personnage entre en contact avec une flaque,
         if (collision.gameObject.tag == "Flaque")
         {
-            // Appeler la fonction qui altère le mouvement du personnage
-            StartCoroutine(EffetFlaque());
+            if (ControlesInversees == false)
+            {
+                ControlesInversees = true;
+            }
         }
 
         // Si le personnage entre en contact avec de la bouffe,
@@ -197,37 +243,41 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
         {
             //proche de la table
             joueurProcheTable = false;
-            
-
         }
-    }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        
-    }
-
-    IEnumerator EffetFlaque()
-    {
-        // Si le personnage ne glisse pas,
-        if (!glisse)
+        if (collision.gameObject.tag == "Flaque")
         {
-            // Faire glisser le personnage
-            glisse = true;
-
-            // Inverser la vitesse de déplacement
-            Vitesse *= -1;
-
-            // Attendre 5 secondes
-            yield return new WaitForSeconds(5);
-
-            // Rétablir la vitesse de déplacement
-            Vitesse *= -1;
-
-            // Faire rétablir le personnage
-            glisse = false;
+            Invoke("RemettreLesCommandes", 5f);
         }
     }
+
+    void RemettreLesCommandes()
+    {
+        ControlesInversees = false;
+    }
+
+    /*  IEnumerator EffetFlaque()
+         {
+          // Si le personnage ne glisse pas,
+             if (!glisse)
+         {
+              // Faire glisser le personnage
+             glisse = true;
+
+              // Inverser la vitesse de déplacement
+              Vitesse *= -1;
+
+              // Attendre 5 secondes
+              yield return new WaitForSeconds(5);
+
+              // Rétablir la vitesse de déplacement
+              Vitesse *= -1;
+
+              // Faire rétablir le personnage
+              glisse = false;
+          }
+      }
+    */
 
     void RamasserBouffe()
     {
