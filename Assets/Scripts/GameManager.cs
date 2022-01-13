@@ -13,12 +13,13 @@ public class GameManager : MonoBehaviour
     public static int nbOfOrdersDeliveredSuccessfully = 0;
     public int nbOfOrdersToWin;
 
-    Button boutonQuit;
+    
     TMP_Text scoreText;
     TMP_Text winText;
     TMP_Text loseText;
     AudioSource musicEnd;
     Button MenuPrincipal;
+    Button boutonQuit;
 
     public AudioClip musicWin;
     public AudioClip musicLose;
@@ -58,16 +59,15 @@ public class GameManager : MonoBehaviour
         {
             case 0:
 
-                if (boutonQuit == null)
-                {
-                    boutonQuit = GameObject.FindGameObjectWithTag("Bouton").GetComponent<Button>();
+               
+                    boutonQuit = GameObject.FindGameObjectWithTag("BoutonQuit").GetComponent<Button>();
 
                     boutonQuit.onClick.AddListener(() => QuitApp());
                     //Reset les variables stathicc
                     totalWaitingClients = 0;
                     nbOfClientsServed = 0;
                     nbOfOrdersDeliveredSuccessfully = 0;
-                }
+                
                 
 
                 break;
