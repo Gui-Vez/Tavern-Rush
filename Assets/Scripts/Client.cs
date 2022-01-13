@@ -93,6 +93,7 @@ public class Client : MonoBehaviour
                     if (tables[tableWantedIndex].transform.GetChild(0).gameObject.GetComponent<ItemBouffe>().itemID == foodWanted.ToString())
                     {
                         orderSuccess = true;
+                        GameManager.nbOfOrdersDeliveredSuccessfully++;
                     }
                     else
                     {
@@ -141,7 +142,7 @@ public class Client : MonoBehaviour
             
             Destroy(gameObject);
             //spawnPoint.GetComponent<ClientSpawner>().canSpawnClient = true;
-            ClientSpawner.totalWaitingClients--;
+            GameManager.totalWaitingClients--;
             
         }
 

@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Timer : MonoBehaviour
 {
     public float LeTimer;
-    public Text TimerText;
+    public TMP_Text TimerText;
     public AudioSource Source;
 
     public AudioClip horloge;
     // Start is called before the first frame update
     void Start()
     {
-        TimerText = GetComponent<Text>();
+        TimerText = GetComponent<TMP_Text>();
         Invoke("DixSecondes", 4.4f);
     }
 
@@ -25,8 +26,9 @@ public class Timer : MonoBehaviour
         if (LeTimer < 0)
         {
             LeTimer = 0;
+
             // Inserer le changement de scene ici
-            // SceneManager.LoadScene("");
+            GameManager.LoadScene(2);
         }
         LeTimer -= Time.deltaTime;
         TimerText.text = LeTimer.ToString("f0");

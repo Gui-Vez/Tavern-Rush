@@ -15,6 +15,7 @@ TagManager:
   - PIzza
   - Frites
   - Martini
+  - Score
   layers:
   - Default
   - TransparentFX
