@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3590517430528717573}
   - component: {fileID: 3355702957104236739}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Flaque
   m_TagString: Flaque
   m_Icon: {fileID: 0}
