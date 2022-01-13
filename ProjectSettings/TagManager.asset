@@ -16,6 +16,7 @@ TagManager:
   - Frites
   - Martini
   - Score
+  - MusicEnd
   layers:
   - Default
   - TransparentFX
