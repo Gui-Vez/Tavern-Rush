@@ -8,10 +8,13 @@ public class Timer : MonoBehaviour
 {
     public float LeTimer;
     public Text TimerText;
+    public AudioSource audioSource;
+    public AudioClip Horloge;
     // Start is called before the first frame update
     void Start()
     {
         TimerText = GetComponent<Text>();
+        Invoke("DixSecondes", 4.4f);
     }
 
     // Update is called once per frame
@@ -25,5 +28,10 @@ public class Timer : MonoBehaviour
         }
         LeTimer -= Time.deltaTime;
         TimerText.text = LeTimer.ToString("f0");
+    }
+
+    void DixSecondes()
+    {
+        audioSource.PlayOneShot(Horloge, 0.5f);
     }
 }
