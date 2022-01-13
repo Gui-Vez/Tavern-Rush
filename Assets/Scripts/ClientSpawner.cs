@@ -59,7 +59,7 @@ public class ClientSpawner : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Client" && collision.gameObject.GetComponent<Client>().correctFoodReceived)
+        if (collision.gameObject.tag == "Client" && collision.gameObject.GetComponent<Client>().FoodReceived)
         {
             nbOfClientsServed++;
 

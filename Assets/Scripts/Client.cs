@@ -24,8 +24,8 @@ public class Client : MonoBehaviour
     GameObject foodWantedClone;
     public GameObject foodWantedPrefab;
 
-    public bool correctFoodReceived = false;
-    bool wrongFood = false;
+    public bool FoodReceived = false;
+    bool orderSuccess = false;
     [SerializeField] bool arrivedAtTable = false;
     bool quittingTable = false;
 
@@ -75,8 +75,9 @@ public class Client : MonoBehaviour
         }
         else
         {
-            if (correctFoodReceived == false)
+            if (FoodReceived == false)
             {
+             
                 currentVelocity = Vector2.zero;
                 animator.SetTrigger("ArrivedAtTable");
                 bubbleAnimator.SetTrigger("ArrivedAtTable");
@@ -87,14 +88,16 @@ public class Client : MonoBehaviour
                     print(tables[tableWantedIndex].transform.GetChild(0).gameObject.GetComponent<ItemBouffe>().itemID);
                     print(foodWanted.ToString());
 
+                    FoodReceived = true;
+
                     if (tables[tableWantedIndex].transform.GetChild(0).gameObject.GetComponent<ItemBouffe>().itemID == foodWanted.ToString())
                     {
-                        correctFoodReceived = true;
+                        orderSuccess = true;
                     }
                     else
                     {
                         //Le client part, fâché !
-                        wrongFood = true;
+                        orderSuccess = false;
                     }
                 }
                 
@@ -102,7 +105,7 @@ public class Client : MonoBehaviour
             
         }
 
-        if (quittingTable == false && (correctFoodReceived || wrongFood))
+        if (quittingTable == false && FoodReceived)
         {
             
             quittingTable = true;
@@ -133,7 +136,7 @@ public class Client : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "SpawnClient" && correctFoodReceived)
+        if (collision.gameObject.tag == "SpawnClient" && FoodReceived)
         {
             
             Destroy(gameObject);
