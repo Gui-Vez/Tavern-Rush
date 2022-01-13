@@ -249,6 +249,11 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
         {
             Invoke("RemettreLesCommandes", 5f);
         }
+
+        if (collision.gameObject.tag == "Mouche")
+        {
+            EffetMouche();
+        }
     }
 
     void RemettreLesCommandes()
@@ -313,5 +318,10 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
             // Réinitialiser la bouffe actuelle
             BouffeActuelle = GameObject.Find(" ");
         }
+    }
+
+    void EffetMouche()
+    {
+        print("La mouche a frappé le joueur");
     }
 }
