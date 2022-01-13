@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public static int nbOfOrdersDeliveredSuccessfully = 0;
     public int nbOfOrdersToWin;
 
+    Button boutonQuit;
     TMP_Text scoreText;
     TMP_Text winText;
     TMP_Text loseText;
@@ -56,14 +57,24 @@ public class GameManager : MonoBehaviour
         switch (currentScene.buildIndex)
         {
             case 0:
-                //Reset les variables stathicc
-                totalWaitingClients = 0;
-                nbOfClientsServed = 0;
-                nbOfOrdersDeliveredSuccessfully = 0;
+
+                if (boutonQuit == null)
+                {
+                    boutonQuit = GameObject.FindGameObjectWithTag("Bouton").GetComponent<Button>();
+
+                    boutonQuit.onClick.AddListener(() => QuitApp());
+                    //Reset les variables stathicc
+                    totalWaitingClients = 0;
+                    nbOfClientsServed = 0;
+                    nbOfOrdersDeliveredSuccessfully = 0;
+                }
+                
 
                 break;
 
             case 1:
+
+                
                 break;
 
             case 2:
@@ -114,7 +125,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void Quit()
+    public void QuitApp()
     {
         Application.Quit();
     }

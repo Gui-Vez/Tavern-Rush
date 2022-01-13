@@ -227,6 +227,7 @@ MonoBehaviour:
   - {fileID: 9100000, guid: 5746b985886198f4d95c8f9b5f438ecd, type: 2}
   - {fileID: 22100000, guid: 43c3c6089029abf4a8e0d88ff90c9756, type: 2}
   - {fileID: 22100000, guid: 7f254b375fd159f458bdd92ea8f22d46, type: 2}
+  - {fileID: 22100000, guid: 015c65fb6c018aa4ea8a2b0c8317317c, type: 2}
   foodSprites:
   - {fileID: 21300000, guid: 49789fe00dc28e74c9efb690bd89f84b, type: 3}
   - {fileID: 21300000, guid: 55ac39362644b074db4b97734e283f87, type: 3}
@@ -263,7 +264,7 @@ Animator:
   m_GameObject: {fileID: 4141776765292904729}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 7f254b375fd159f458bdd92ea8f22d46, type: 2}
+  m_Controller: {fileID: 22100000, guid: 015c65fb6c018aa4ea8a2b0c8317317c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

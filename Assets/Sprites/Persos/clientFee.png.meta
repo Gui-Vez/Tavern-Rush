@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: 70880938796314e4788bd3f8b77fd458
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -8777840447459027164
+    second: clientFee_0
+  - first:
+      213: 2545564863538932248
+    second: clientFee_1
+  - first:
+      213: 583197838579364745
+    second: clientFee_2
+  - first:
+      213: 1601462940562587310
+    second: clientFee_3
+  - first:
+      213: -5327786721232668189
+    second: clientFee_4
+  - first:
+      213: 7587010815171012457
+    second: clientFee_5
+  - first:
+      213: 3841097113030544147
+    second: clientFee_6
+  - first:
+      213: 3176859720185217397
+    second: clientFee_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -113,7 +137,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: clientFee_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 427162abe98de2680800000000000000
+      internalID: -8777840447459027164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clientFee_1
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 1
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81a24f3a1c9a35320800000000000000
+      internalID: 2545564863538932248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clientFee_2
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 1
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9837c42285fe71800800000000000000
+      internalID: 583197838579364745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clientFee_3
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 1
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eae7f2d3f0a893610800000000000000
+      internalID: 1601462940562587310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clientFee_4
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 1
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e932e17436ef06b0800000000000000
+      internalID: -5327786721232668189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clientFee_5
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 1
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 967a051832a7a4960800000000000000
+      internalID: 7587010815171012457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clientFee_6
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 1
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31bc6f929715e4530800000000000000
+      internalID: 3841097113030544147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clientFee_7
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 1
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57103e27519761c20800000000000000
+      internalID: 3176859720185217397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

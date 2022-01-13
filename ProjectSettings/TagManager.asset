@@ -18,6 +18,7 @@ TagManager:
   - Score
   - MusicEnd
   - ButtonMenu
+  - BoutonQuit
   layers:
   - Default
   - TransparentFX
