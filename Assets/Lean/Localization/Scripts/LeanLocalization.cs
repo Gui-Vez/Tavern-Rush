@@ -59,6 +59,7 @@ namespace Lean.Localization
 
 		private static Dictionary<string, LeanTranslation> tempTranslations = new Dictionary<string, LeanTranslation>();
 
+		int lanIndex;
 		/// <summary>This stores all languages and their aliases managed by this LeanLocalization instance.</summary>
 		public List<LeanLanguage> Languages
 		{
@@ -188,7 +189,10 @@ namespace Lean.Localization
 		{
 			if (newLanguageIndex >= 0 && newLanguageIndex < languages.Count)
 			{
-				SetCurrentLanguage(languages[newLanguageIndex].Name);
+				lanIndex++;
+				if (lanIndex > 1) lanIndex = 0;
+
+				SetCurrentLanguage(languages[lanIndex].Name);
 			}
 		}
 

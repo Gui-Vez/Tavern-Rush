@@ -93,4 +93,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(buildIndex);
 
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
