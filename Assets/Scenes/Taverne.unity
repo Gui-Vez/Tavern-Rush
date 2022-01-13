@@ -1959,6 +1959,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flaque (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3665634112281264604, guid: 9151a2180ed856344a264c2bbb4677c4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9151a2180ed856344a264c2bbb4677c4, type: 3}
 --- !u!65 &781186817
