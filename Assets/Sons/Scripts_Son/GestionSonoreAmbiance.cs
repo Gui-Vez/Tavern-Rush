@@ -43,7 +43,7 @@ public class GestionSonoreAmbiance : MonoBehaviour
             case "Livraison": Audio.PlayOneShot(livraison, 0.50f); break;
             case "Ramassage": Audio.PlayOneShot(ramassage, 0.75f); break;
 
-            //case "Flaque"   : Audio.PlayOneShot(flaque, 1.00f);    break;
+            case "Flaque"   : Audio.PlayOneShot(flaque, 0.4f);    break;
         }
     }
 }
