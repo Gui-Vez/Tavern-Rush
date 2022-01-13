@@ -10,8 +10,13 @@ public class GameManager : MonoBehaviour
     public static int totalWaitingClients = 0;
     public static int nbOfClientsServed = 0;
     public static int nbOfOrdersDeliveredSuccessfully = 0;
+    public int nbOfOrdersToWin;
 
-    TMP_Text endText;
+    TMP_Text scoreText;
+    TMP_Text winText;
+    TMP_Text loseText;
+
+    Animator serveurAnim;
 
     Scene currentScene;
 
@@ -52,10 +57,27 @@ public class GameManager : MonoBehaviour
 
             case 2:
 
-                if (endText == null)
+                if (scoreText == null)
                 {
-                    endText = GameObject.FindGameObjectWithTag("Score").GetComponent<TMP_Text>();
-                    endText.text += nbOfOrdersDeliveredSuccessfully.ToString();
+                    scoreText = GameObject.FindGameObjectWithTag("Score").GetComponent<TMP_Text>();
+                    winText = GameObject.Find("WinText").GetComponent<TMP_Text>();
+                    loseText = GameObject.Find("LoseText").GetComponent<TMP_Text>();
+                    serveurAnim = GameObject.Find("Serveur").GetComponent<Animator>();
+
+                    scoreText.text += " " + nbOfOrdersDeliveredSuccessfully.ToString();
+                     
+                    if (nbOfOrdersDeliveredSuccessfully > 10)
+                    {
+                        //Activate Win Text, Win Anim
+                        winText.enabled = true;
+                        serveurAnim.SetTrigger("Win");
+                    }
+                    else
+                    {
+                        //Activate Lose Text, Lose Anim
+                        loseText.enabled = true;
+                        serveurAnim.SetTrigger("Lose");
+                    }
                 }
                 
                 break;
@@ -70,5 +92,10 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(buildIndex);
 
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }

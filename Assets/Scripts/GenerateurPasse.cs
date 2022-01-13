@@ -9,6 +9,7 @@ public class GenerateurPasse : MonoBehaviour
     public GameObject[] plats;
 
     public GameObject RefSons;
+    public int intervalleSpawnBouffe;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,7 @@ public class GenerateurPasse : MonoBehaviour
         while (true)
         {
             // Faire respirer la coroutine à chaque 10 secondes
-            yield return new WaitForSeconds(8f);
+            yield return new WaitForSeconds(intervalleSpawnBouffe);
             
             //Génération d'un ennemi au hasard
             int platHasard = Random.Range(0, plats.Length);
