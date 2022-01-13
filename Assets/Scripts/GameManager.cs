@@ -15,6 +15,10 @@ public class GameManager : MonoBehaviour
     TMP_Text scoreText;
     TMP_Text winText;
     TMP_Text loseText;
+    AudioSource musicEnd;
+
+    public AudioClip musicWin;
+    public AudioClip musicLose;
 
     Animator serveurAnim;
 
@@ -61,23 +65,28 @@ public class GameManager : MonoBehaviour
                 {
                     //Dude, c'est un fuckin' tag, oublie pas demain
                     scoreText = GameObject.FindGameObjectWithTag("Score").GetComponent<TMP_Text>();
+                    musicEnd = GameObject.FindGameObjectWithTag("MusicEnd").GetComponent<AudioSource>();
                     winText = GameObject.Find("WinText").GetComponent<TMP_Text>();
                     loseText = GameObject.Find("LoseText").GetComponent<TMP_Text>();
                     serveurAnim = GameObject.Find("Serveur").GetComponent<Animator>();
 
                     scoreText.text += nbOfOrdersDeliveredSuccessfully.ToString();
                      
-                    if (nbOfOrdersDeliveredSuccessfully > 10)
+                    if (nbOfOrdersDeliveredSuccessfully > nbOfOrdersToWin)
                     {
                         //Activate Win Text, Win Anim
                         winText.enabled = true;
                         serveurAnim.SetTrigger("Win");
+
+                        musicEnd.PlayOneShot(musicWin);
                     }
                     else
                     {
                         //Activate Lose Text, Lose Anim
                         loseText.enabled = true;
                         serveurAnim.SetTrigger("Lose");
+
+                        musicEnd.PlayOneShot(musicLose);
                     }
                 }
                 
