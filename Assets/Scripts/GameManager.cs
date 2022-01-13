@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
                     loseText = GameObject.Find("LoseText").GetComponent<TMP_Text>();
                     serveurAnim = GameObject.Find("Serveur").GetComponent<Animator>();
 
-                    scoreText.text += " " + nbOfOrdersDeliveredSuccessfully.ToString();
+                    scoreText.text += nbOfOrdersDeliveredSuccessfully.ToString();
                      
                     if (nbOfOrdersDeliveredSuccessfully > 10)
                     {
