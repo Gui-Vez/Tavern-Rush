@@ -657,6 +657,14 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.023046104
       objectReference: {fileID: 0}
+    - target: {fileID: 615630736172017899, guid: 4e08dc972a327b740892b162fef58e0f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -20.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 615630736172017899, guid: 4e08dc972a327b740892b162fef58e0f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.62
+      objectReference: {fileID: 0}
     - target: {fileID: 615630736563011316, guid: 4e08dc972a327b740892b162fef58e0f, type: 3}
       propertyPath: m_Name
       value: Tables (1)
@@ -713,9 +721,25 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Table
       objectReference: {fileID: 0}
+    - target: {fileID: 615630736685991743, guid: 4e08dc972a327b740892b162fef58e0f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 615630736685991743, guid: 4e08dc972a327b740892b162fef58e0f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.15
+      objectReference: {fileID: 0}
     - target: {fileID: 615630737497149079, guid: 4e08dc972a327b740892b162fef58e0f, type: 3}
       propertyPath: m_TagString
       value: Table
+      objectReference: {fileID: 0}
+    - target: {fileID: 615630737497149097, guid: 4e08dc972a327b740892b162fef58e0f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -20.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 615630737497149097, guid: 4e08dc972a327b740892b162fef58e0f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.94
       objectReference: {fileID: 0}
     - target: {fileID: 615630737497149098, guid: 4e08dc972a327b740892b162fef58e0f, type: 3}
       propertyPath: m_Size.x
