@@ -4,29 +4,30 @@ using UnityEngine;
 
 public class Flaque : MonoBehaviour
 {
-    public GameObject flaque;
+    public GameObject[] SpawnersFlaques;
     public AudioClip sonFlaque;
     public int compteurFlaque = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnFlaque());
+        StartCoroutine(Commande());
     }
 
-    IEnumerator SpawnFlaque()
+    IEnumerator Commande()
     {
-        while (compteurFlaque < 1)
+        while (compteurFlaque < 2)
         {
             // Faire respirer la coroutine à chaque 10 secondes
             yield return new WaitForSeconds(2f);
             
             //Génération d'un ennemi au hasard
-            GameObject instanceFlaque = Instantiate(flaque, flaque.transform.position, flaque.transform.rotation);
+            int FlaqueAuHasard = Random.Range(0, SpawnersFlaques.Length);
+            GameObject instanceFlaque = Instantiate(SpawnersFlaques[FlaqueAuHasard], SpawnersFlaques[FlaqueAuHasard].transform.position, SpawnersFlaques[FlaqueAuHasard].transform.rotation);
             compteurFlaque++;
             GetComponent<AudioSource>().PlayOneShot(sonFlaque, 5f);
             instanceFlaque.SetActive(true);
-            StopCoroutine(SpawnFlaque());
+            StopCoroutine(Commande());
             
             //GetComponent<Animator>().SetBool("qqch", true);
         }
