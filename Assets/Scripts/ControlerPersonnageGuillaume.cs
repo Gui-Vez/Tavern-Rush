@@ -14,6 +14,7 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
     bool joueurProcheTable = false;
     bool joueurProcheBouffe = false;
     public bool ControlesInversees = false;
+    public GameObject Exclamation;
 
     public GameObject BouffeActuelle; //la bouffe que le joueur porte
 
@@ -200,6 +201,10 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
             if (ControlesInversees == false)
             {
                 ControlesInversees = true;
+                Invoke("RemettreLesCommandes", 5f);
+
+                //Activer point d'exclamation
+                Exclamation.SetActive(true);
             }
         }
 
@@ -241,7 +246,8 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
         // Si le personnage entre en contact avec une flaque,
         if (collision.gameObject.tag == "Flaque")
         {
-            Invoke("RemettreLesCommandes", 5f);
+            
+            
         }
 
         // Si le personnage entre en contact avec une mouche,
@@ -254,6 +260,7 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
     void RemettreLesCommandes()
     {
         ControlesInversees = false;
+        Exclamation.SetActive(false);
     }
 
     /*  IEnumerator EffetFlaque()
