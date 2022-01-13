@@ -5,8 +5,9 @@ using UnityEngine;
 public class Flaque : MonoBehaviour
 {
     public GameObject[] SpawnersFlaques;
-    public AudioClip sonFlaque;
     public int compteurFlaque = 0;
+
+    public GameObject RefSons;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,7 @@ public class Flaque : MonoBehaviour
             int FlaqueAuHasard = Random.Range(0, SpawnersFlaques.Length);
             GameObject instanceFlaque = Instantiate(SpawnersFlaques[FlaqueAuHasard], SpawnersFlaques[FlaqueAuHasard].transform.position, SpawnersFlaques[FlaqueAuHasard].transform.rotation);
             compteurFlaque++;
-            GetComponent<AudioSource>().PlayOneShot(sonFlaque, 5f);
+            RefSons.GetComponent<GestionSonoreAmbiance>().JouerSons("Flaque");
             instanceFlaque.SetActive(true);
             StopCoroutine(Commande());
             
