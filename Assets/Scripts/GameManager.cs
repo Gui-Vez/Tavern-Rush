@@ -60,9 +60,9 @@ public class GameManager : MonoBehaviour
             case 0:
 
                
-                    boutonQuit = GameObject.FindGameObjectWithTag("BoutonQuit").GetComponent<Button>();
+                    //boutonQuit = GameObject.FindGameObjectWithTag("BoutonQuit").GetComponent<Button>();
 
-                    boutonQuit.onClick.AddListener(() => QuitApp());
+                    //boutonQuit.onClick.AddListener(() => QuitApp());
                     //Reset les variables stathicc
                     totalWaitingClients = 0;
                     nbOfClientsServed = 0;
@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
 
                     scoreText.text += nbOfOrdersDeliveredSuccessfully.ToString();
                      
-                    if (nbOfOrdersDeliveredSuccessfully > nbOfOrdersToWin)
+                    if (nbOfOrdersDeliveredSuccessfully >= nbOfOrdersToWin)
                     {
                         //Activate Win Text, Win Anim
                         winText.enabled = true;
