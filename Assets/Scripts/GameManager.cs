@@ -32,12 +32,15 @@ public class GameManager : MonoBehaviour
     
      private void Awake()
      {
-         if (GameObject.FindGameObjectWithTag("GameController") && GameObject.FindGameObjectWithTag("GameController") != this.gameObject) Destroy(GameObject.FindGameObjectWithTag("GameController"));
+        /*
+        if (GameObject.FindGameObjectWithTag("GameController") && GameObject.FindGameObjectWithTag("GameController") != this.gameObject)
+            Destroy(GameObject.FindGameObjectWithTag("GameController"));
+            */
 
 
          if (current != null && current != this)
          {
-                Destroy(gameObject);
+                //Destroy(gameObject);
                 return;
          }
 
@@ -59,10 +62,17 @@ public class GameManager : MonoBehaviour
         {
             case 0:
 
-               
-                    //boutonQuit = GameObject.FindGameObjectWithTag("BoutonQuit").GetComponent<Button>();
+                if (GameObject.FindGameObjectWithTag("BoutonQuit"))
+                {
+                    boutonQuit = GameObject.FindGameObjectWithTag("BoutonQuit").GetComponent<Button>();
 
-                    //boutonQuit.onClick.AddListener(() => QuitApp());
+                    boutonQuit.onClick.AddListener(() => QuitApp());
+                }
+
+                    
+                    
+
+
                     //Reset les variables stathicc
                     totalWaitingClients = 0;
                     nbOfClientsServed = 0;
