@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ControlerPersonnageGuillaume : MonoBehaviour
+public class ControlerPersonnage : MonoBehaviour
 {
     public float vitesseX;      //vitesse en gauche et droite
     public float vitesseY;      //vitesse en haut et bas
@@ -173,7 +173,7 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
             BouffeActuelle.transform.position = transform.position;
         }
 
-        //Si le joueur est proche de la table et qu'il appuie sur E, prendre OU déposer la bouffe
+        //Si le joueur est proche de la table et qu'il appuie sur E, prendre OU dÃ©poser la bouffe
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (joueurProcheBouffe)
@@ -184,7 +184,7 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
 
             if (joueurProcheTable)
             {
-                //Déposer table
+                //DÃ©poser table
                 ServirBouffe();
 
             }
@@ -271,16 +271,16 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
               // Faire glisser le personnage
              glisse = true;
 
-              // Inverser la vitesse de déplacement
+              // Inverser la vitesse de dÃ©placement
               Vitesse *= -1;
 
               // Attendre 5 secondes
               yield return new WaitForSeconds(5);
 
-              // Rétablir la vitesse de déplacement
+              // RÃ©tablir la vitesse de dÃ©placement
               Vitesse *= -1;
 
-              // Faire rétablir le personnage
+              // Faire rÃ©tablir le personnage
               glisse = false;
           }
       }
@@ -291,7 +291,7 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
         // Faire porter la bouffe
         porteBouffe = true;
 
-        // Sélectionner la bouffe
+        // SÃ©lectionner la bouffe
         BouffeActuelle = closestObject;
         BouffeActuelle.GetComponent<BoxCollider2D>().enabled = false;
         //BouffeActuelle = Bouffe;
@@ -317,14 +317,14 @@ public class ControlerPersonnageGuillaume : MonoBehaviour
 
             RefSons.GetComponent<GestionSonoreAmbiance>().JouerSons("Livraison");
 
-            // Réinitialiser la bouffe actuelle
+            // RÃ©initialiser la bouffe actuelle
             BouffeActuelle = GameObject.Find(" ");
         }
     }
 
     void EffetMouche()
     {
-        Debug.Log("La mouche a touché le joueur");
+        Debug.Log("La mouche a touchÃ© le joueur");
 
         if (BouffeActuelle != null)
         {
